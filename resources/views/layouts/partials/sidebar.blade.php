@@ -25,9 +25,9 @@
     <div class="menu_section">
       <h3>General</h3>
       <ul class="nav side-menu">
-        <li><a href="{{ route('dashboard') }}" style="font-size: 21px;">Dashboard</a></li>
+        <li ><a href="{{ route('dashboard') }}" style="font-size: 21px;"><i class="fa fa-dashboard"></i>Dashboard</a></li>
 
-        <li><a><i class="fa fa-edit"></i> Profile <span class="fa fa-chevron-down"></span></a>
+        <li><a><i class="fa fa-user"></i> Profile <span class="fa fa-chevron-down"></span></a>
           <ul class="nav child_menu">
             <li><a href="form.html">About</a></li>
             <li><a href="form.html">Update Profile</a></li>
@@ -35,21 +35,21 @@
           </ul>
         </li>
 
-        <li><a><i class="fa fa-edit"></i> Admin <span class="fa fa-chevron-down"></span></a>
+        <li><a><i class="fa fa-user"></i> Admin <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu">
               <li><a href="form.html">Add Admin</a></li>
               <li><a href="form.html">Manage Admin</a></li>
             </ul>
         </li>
 
-        <li><a><i class="fa fa-edit"></i> Account <span class="fa fa-chevron-down"></span></a>
+        <li><a><i class="fa fa-bank"></i> Account <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu">
                 <li><a href="form.html">Create account</a></li>
                 <li><a href="form.html">Manage account</a></li>
             </ul>
         </li>
 
-        <li><a><i class="fa fa-edit"></i> Libraria <span class="fa fa-chevron-down"></span></a>
+        <li><a><i class="fa fa-book"></i> Libraria <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu">
               <li><a href="form.html">Add Books</a></li>
               <li><a href="form.html">Manage Books</a></li>
@@ -63,7 +63,7 @@
             </ul>
         </li>
 
-        <li><a><i class="fa fa-edit"></i> Students <span class="fa fa-chevron-down"></span></a>
+        <li><a><i class="fa fa-graduation-cap"></i> Students <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu">
               <li><a href="form.html">Add Student</a></li>
               <li><a href="form.html">Manage Students</a></li>
@@ -74,6 +74,13 @@
             <ul class="nav child_menu">
               <li><a href="form.html">Student Registration</a></li>
               <li><a href="form.html">Students Register</a></li>
+            </ul>
+        </li>
+
+        <li><a><i class="fa fa-edit"></i> User Type <span class="fa fa-chevron-down"></span></a>
+            <ul class="nav child_menu">
+              <li><a href="form.html">add User</a></li>
+              <li><a href="form.html">Manage User</a></li>
             </ul>
         </li>
 
@@ -112,7 +119,7 @@
           </ul>
         </li>
 
-        <li><a><i class="fa fa-edit"></i> Setting <span class="fa fa-chevron-down"></span></a>
+        <li><a><i class="fa fa-gear"></i> Setting <span class="fa fa-chevron-down"></span></a>
           <ul class="nav child_menu">
             <li><a href="form.html">Notice</a></li>
             <li><a href="form.html">Events</a></li>
