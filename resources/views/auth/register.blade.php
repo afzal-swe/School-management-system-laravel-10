@@ -1,52 +1,57 @@
-<x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
-        @csrf
+@extends('layouts.app')
+@section('content')
 
-        <!-- Name -->
-        <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
-        </div>
+<div class="container">
+    <div class="main_container">
+        <div class="login_wrapper">
+            <div class="animate form login_form">
+                <section class="login_content">
+                <form method="POST" action="{{ route('register') }}">
+                    @csrf
+                    <h1>Create Account</h1>
 
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
+                    <div>
+                        <input class="form-control" type="text" name="name" value="{{old('name')}}" placeholder="Username" required autocomplete="username" />
+                    </div>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+                    <div>
+                        <input id="email" class="form-control" type="email" name="email" value="{{old('email')}}" placeholder="E-mail" required autocomplete="username" />
+                    </div>
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
+                    <div>
+                        <input id="password" class="form-control" type="password" name="password" placeholder="Password" required autocomplete="new-password"  />
+                    </div>
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
+                    <div>
+                        <input id="password_confirmation" class="form-control" type="password" name="password_confirmation" placeholder="Confirm Password" required autocomplete="new-password"  />
+                    </div>
 
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+                    <div>
+                    {{-- <a class="btn btn-default submit" href="index.html">Submit</a> --}}
+                    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                    </div>
 
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
+                    <div class="clearfix"></div>
 
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-        </div>
+                    <div class="separator">
+                    <p class="change_link">Already a member ?
+                        <a href="{{ route('login') }}" class="to_register"> Log in </a>
+                    </p>
 
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
-            </a>
+                    <div class="clearfix"></div>
+                    <br />
 
-            <x-primary-button class="ml-4">
-                {{ __('Register') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+                    <div>
+                        <h1><i class="fa fa-paw"></i> Altazur Rahman Degree College</h1>
+                        <p>©2023 All Rights Reserved. <span class="text-success">Code Artist.IT</span></p>
+                      </div>
+                    </div>
+                </form>
+                </section>
+            </div>
+            </div>
+            </div>
+            </div>
+   
+    
+@endsection
