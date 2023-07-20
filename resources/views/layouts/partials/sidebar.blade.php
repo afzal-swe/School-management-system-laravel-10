@@ -93,8 +93,8 @@
 
         <li><a><i class="fa fa-edit"></i> Subject <span class="fa fa-chevron-down"></span></a>
           <ul class="nav child_menu">
-            <li><a href="form.html">Create Subject</a></li>
-            <li><a href="form.html">Manage Subject</a></li>
+            <li><a href="{{ route('subject.create') }}">Create Subject</a></li>
+            <li><a href="{{ route('subject.index') }}">Manage Subject</a></li>
           </ul>
         </li>
 

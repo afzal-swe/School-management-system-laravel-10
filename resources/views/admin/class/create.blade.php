@@ -51,7 +51,11 @@
                               <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Class Name <span class="required text-danger">*</span></label>
 
                               <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="text" id="class" class="form-control col-md-7 col-xs-12" name="class" placeholder="Class Name" required>
+                                <input type="text" id="class" class="form-control col-md-7 col-xs-12 @error('class') is-invalid @enderror" name="class" placeholder="Class Name">
+
+                                @error('class')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                               </div>
                             </div>
                       
@@ -68,6 +72,8 @@
                         </div>
                       </div>
                     </div>
+                  </div>
+                  </div>
                   </div>
       
                   

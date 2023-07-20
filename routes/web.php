@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ClassesController;
+use App\Http\Controllers\Admin\SubjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,5 +34,11 @@ Route::middleware('auth')->group(function () {
 Route::get('/class', [ClassesController::class, 'index'])->name('class.index')->middleware(['auth', 'verified']);
 Route::get('/class/create', [ClassesController::class, 'create'])->name('class.create')->middleware(['auth', 'verified']);
 Route::post('/class/store', [ClassesController::class, 'store'])->name('class.store')->middleware(['auth', 'verified']);
+
+// Subject Route Section //
+Route::get('/subject', [SubjectController::class, 'index'])->name('subject.index')->middleware(['auth', 'verified']);
+Route::get('/subject/create', [SubjectController::class, 'create'])->name('subject.create')->middleware(['auth', 'verified']);
+Route::post('/subject/store', [SubjectController::class, 'store'])->name('subject.store')->middleware(['auth', 'verified']);
+
 
 require __DIR__ . '/auth.php';
