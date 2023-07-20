@@ -31,5 +31,7 @@ Route::middleware('auth')->group(function () {
 
 // Class Route Section //
 Route::get('/class', [ClassesController::class, 'index'])->name('class.index')->middleware(['auth', 'verified']);
+Route::get('/class/create', [ClassesController::class, 'create'])->name('class.create')->middleware(['auth', 'verified']);
+Route::post('/class/store', [ClassesController::class, 'store'])->name('class.store')->middleware(['auth', 'verified']);
 
 require __DIR__ . '/auth.php';

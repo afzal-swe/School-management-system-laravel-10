@@ -86,7 +86,7 @@
 
         <li><a><i class="fa fa-edit"></i> Class <span class="fa fa-chevron-down"></span></a>
           <ul class="nav child_menu">
-            <li><a href="#">Create Class</a></li>
+            <li><a href="{{ route('class.create') }}">Create Class</a></li>
             <li><a href="{{ route('class.index') }}">Manage Class</a></li>
           </ul>
         </li>
