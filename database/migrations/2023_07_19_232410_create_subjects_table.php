@@ -13,10 +13,11 @@ return new class extends Migration
     {
         Schema::create('subjects', function (Blueprint $table) {
             $table->id();
-            $table->string('class_id')->nullable();
+            $table->unsignedBigInteger('class_id')->nullable(); // unsignedBigInteger its mean forign key defind do it.
             $table->string('subject')->nullable();
             $table->string('slug')->nullable();
             $table->timestamps();
+            $table->foreign('class_id')->references('id')->on('classes')->onDelete('cascade');
         });
     }
 
