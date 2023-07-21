@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('subjects', function (Blueprint $table) {
+        Schema::create('classes', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('class_id')->nullable(); // unsignedBigInteger its mean forign key defind do it.
-            $table->string('subject')->nullable();
+            $table->unsignedBigInteger('department_id')->nullable();
+            $table->string('class')->nullable();
             $table->string('slug')->nullable();
             $table->timestamps();
-            $table->foreign('class_id')->references('id')->on('classes')->onDelete('cascade');
+            $table->foreign('department_id')->references('id')->on('departments')->onDelete('cascade');
         });
     }
 
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('subjects');
+        Schema::dropIfExists('classes');
     }
 };

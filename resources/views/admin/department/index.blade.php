@@ -5,7 +5,7 @@
     <div class="">
       <div class="page-title">
         <div class="title_left">
-          <h3>Tables <small>All Subject</small></h3>
+          <h3>Tables <small>All Department</small></h3>
         </div>
 
         <div class="title_right">
@@ -22,7 +22,7 @@
         <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="x_panel">
                 <div class="x_title">
-                    <h2>Subject <small>Information</small></h2>
+                    <h2>Department <small>Information</small></h2>
                     <ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
@@ -48,24 +48,20 @@
                         <tr>
                             <th>SL</th>
                             <th>Department</th>
-                            <th>Class</th>
-                            <th>Subject</th>
-                            <th>Subject Slug</th>
+                            <th>Department Slug</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($subject as $key=>$row)
+                        @foreach ($department as $key=>$row)
                             <tr>
                                 <th >{{ ++$key }}</th>
-                                <td>{{ $row->department->department}}</td>
-                                <td>{{ $row->class->class}}</td>
-                                <td>{{ $row->subject}}</td>
-                                <td>{{ $row->slug}}</td>
+                                <td>{{ $row->department}}</td>
+                                <td>{{ $row->department_slug}}</td>
                                 <td>
-                                    {{-- <a href="#" class="btn btn-success sm" title="View Data"><i class="ri-eye-off-fill"></i></a> --}}
-                                    <a href="#" class="btn btn-info sm" title="Edit Data"><i class="fa fa-edit"></i></a>
-                                    <a href="#" id="delete" class="btn btn-danger sm" title="Delete Data"><i class="fa fa-trash"></i></a>
+                                  {{-- <a href="#" class="btn btn-success sm" title="View Data"><i class="fa fa-eye"></i></a> --}}
+                                  <a href="#" class="btn btn-info sm" title="Edit Data"><i class="fa fa-edit"></i></a>
+                                  <a href="#" id="delete" class="btn btn-danger sm" title="Delete Data"><i class="fa fa-trash"></i></a>
                                     
                                 </td>
                             </tr>

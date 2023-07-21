@@ -63,6 +63,26 @@
                                 @enderror
                               </div>
                             </div>
+
+                            <div class="form-group">
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Class Name <span class="required text-danger">*</span></label>
+
+                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                <select name="department_id" id="" class="form-control col-md-7 col-xs-12 @error('department_id') is-invalid @enderror">
+                                    <option value="" disabled selected>Choose Department</option>
+                                    @foreach ($department as $row)
+                                        <option value="{{ $row->id }}" >{{ $row->department }}</option>
+                                    @endforeach
+                                </select>
+
+                                @error('department_id')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                              </div>
+                            </div>
+
+                              
+                          
                             <div class="form-group">
                               <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Subject Name <span class="required text-danger">*</span></label>
 

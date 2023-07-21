@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ClassesController;
 use App\Http\Controllers\Admin\SubjectController;
+use App\Http\Controllers\Admin\DepartmentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +40,12 @@ Route::post('/class/store', [ClassesController::class, 'store'])->name('class.st
 Route::get('/subject', [SubjectController::class, 'index'])->name('subject.index')->middleware(['auth', 'verified']);
 Route::get('/subject/create', [SubjectController::class, 'create'])->name('subject.create')->middleware(['auth', 'verified']);
 Route::post('/subject/store', [SubjectController::class, 'store'])->name('subject.store')->middleware(['auth', 'verified']);
+
+// Department Route Section //
+Route::get('/department', [DepartmentController::class, 'index'])->name('department.index')->middleware(['auth', 'verified']);
+Route::get('/department/create', [DepartmentController::class, 'create'])->name('department.create')->middleware(['auth', 'verified']);
+Route::post('/department/store', [DepartmentController::class, 'store'])->name('department.store')->middleware(['auth', 'verified']);
+
 
 
 require __DIR__ . '/auth.php';

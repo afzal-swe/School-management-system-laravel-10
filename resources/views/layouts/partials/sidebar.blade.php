@@ -77,6 +77,13 @@
             </ul>
         </li>
 
+        <li><a><i class="fa fa-edit"></i> Department <span class="fa fa-chevron-down"></span></a>
+            <ul class="nav child_menu">
+              <li><a href="{{ route('department.create') }}">Add Department</a></li>
+              <li><a href="{{ route('department.index') }}">Manage Department</a></li>
+            </ul>
+        </li>
+
         <li><a><i class="fa fa-edit"></i> User Type <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu">
               <li><a href="form.html">add User</a></li>

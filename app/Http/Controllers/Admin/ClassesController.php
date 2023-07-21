@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Classes;
 use Illuminate\Support\Str;
 use Illuminate\Support\Carbon;
+use App\Models\Department;
 
 class ClassesController extends Controller
 {
@@ -20,18 +21,21 @@ class ClassesController extends Controller
     // Create Class function //
     public function create()
     {
-
-        return view('admin.class.create');
+        $department = Department::all();
+        return view('admin.class.create', compact('department'));
     }
     // Store Class function //
     public function store(Request $request)
     {
 
         $request->validate([
-            'class' => 'required|unique:classes|max:25',
+            'department_id' => 'required',
+            'class' => 'required|max:25',
+
         ]);
 
         Classes::insert([
+            'department_id' => $request->department_id,
             'class' => $request->class,
             'slug' => Str::of($request->class)->slug('-'),
             'created_at' => Carbon::now(),

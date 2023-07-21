@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Classes;
 use App\Models\Subject;
+use App\Models\Department;
 use Illuminate\Support\Str;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -15,26 +16,29 @@ class SubjectController extends Controller
     //
     public function index()
     {
-        $class_name = DB::table('subjects')->join('classes', 'subjects.class_id', 'classes.id')->select('classes.class', 'subjects.*')->get();
+
         $subject = Subject::all();
-        return view('admin.subject.index', compact('subject', 'class_name'));
+        return view('admin.subject.index', compact('subject'));
     }
 
     public function create()
     {
         $classes = Classes::all();
-        return view('admin.subject.create', compact('classes'));
+        $department = Department::all();
+        return view('admin.subject.create', compact('classes', 'department'));
     }
 
     public function store(Request $request)
     {
         $request->validate([
             'class_id' => 'required',
+            'department_id' => 'required',
             'subject' => 'required|unique:subjects|max:50',
         ]);
 
         Subject::insert([
             'class_id' => $request->class_id,
+            'department_id' => $request->department_id,
             'subject' => $request->subject,
             'slug' => Str::of($request->subject)->slug('-'),
             'created_at' => Carbon::now(),

@@ -48,6 +48,7 @@
                         <tr>
                             <th>SL</th>
                             <th>Class Name</th>
+                            <th>Department</th>
                             <th>Class Slug</th>
                             <th>Action</th>
                         </tr>
@@ -57,6 +58,7 @@
                             <tr>
                                 <th >{{ ++$key }}</th>
                                 <td>{{ $row->class}}</td>
+                                <td>{{ $row->department->department}}</td>
                                 <td>{{ $row->slug}}</td>
                                 <td>
                                   {{-- <a href="#" class="btn btn-success sm" title="View Data"><i class="fa fa-eye"></i></a> --}}
