@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('user_types', function (Blueprint $table) {
             $table->id();
-            $table->string('user_type')->nullable();
             $table->unsignedBigInteger('user_department')->nullable();
+            $table->string('user_type')->nullable();
             $table->string('user_slug')->nullable();
             $table->timestamps();
             $table->foreign('user_department')->references('id')->on('departments')->onDelete('cascade');

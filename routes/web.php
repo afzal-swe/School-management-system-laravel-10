@@ -49,6 +49,8 @@ Route::post('/department/store', [DepartmentController::class, 'store'])->name('
 
 // User type Route Section //
 Route::get('/user/type', [UserTypeController::class, 'index'])->name('user_type.index')->middleware(['auth', 'verified']);
+Route::get('/user/type/add', [UserTypeController::class, 'create'])->name('user_type.create')->middleware(['auth', 'verified']);
+Route::post('/user/type/store', [UserTypeController::class, 'store'])->name('user_type.store')->middleware(['auth', 'verified']);
 
 
 

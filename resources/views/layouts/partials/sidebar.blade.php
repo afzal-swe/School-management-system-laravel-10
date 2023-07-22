@@ -86,7 +86,7 @@
 
         <li><a><i class="fa fa-edit"></i> User Type <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu">
-              <li><a href="form.html">add User</a></li>
+              <li><a href="{{ route('user_type.create') }}">add User</a></li>
               <li><a href="{{ route('user_type.index') }}">Manage User</a></li>
             </ul>
         </li>
