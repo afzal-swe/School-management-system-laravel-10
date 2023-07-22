@@ -71,7 +71,9 @@
                
                     </tbody>
                     </table>
-
+                    <span style="padding-top: 20px;">
+                      {!! $class->withQueryString()->links('pagination::bootstrap-5') !!}
+                   </span>
                 </div>
             </div>
         </div>

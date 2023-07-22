@@ -15,7 +15,7 @@ class ClassesController extends Controller
 
     public function index()
     {
-        $class = Classes::all();
+        $class = Classes::paginate(10);
         return view('admin.class.index', compact('class'));
     }
     // Create Class function //
