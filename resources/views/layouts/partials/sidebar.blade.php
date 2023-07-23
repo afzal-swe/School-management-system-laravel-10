@@ -29,9 +29,7 @@
 
         <li><a><i class="fa fa-user"></i> Profile <span class="fa fa-chevron-down"></span></a>
           <ul class="nav child_menu">
-            <li><a href="form.html">About</a></li>
-            <li><a href="form.html">Update Profile</a></li>
-            <li><a href="form.html">Change Password</a></li>
+            <li><a href="{{ route('update_profile.edit') }}">Update Profile</a></li>
           </ul>
         </li>
 
@@ -65,6 +63,7 @@
 
         <li><a><i class="fa fa-graduation-cap"></i> Students <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu">
+              <li><a href="form.html">Student Information</a></li>
               <li><a href="form.html">Add Student</a></li>
               <li><a href="form.html">Manage Students</a></li>
             </ul>

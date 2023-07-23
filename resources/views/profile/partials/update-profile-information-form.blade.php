@@ -17,13 +17,52 @@
         @csrf
         @method('patch')
 
-        <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $user->name)" required autofocus autocomplete="name" />
-            <x-input-error class="mt-2" :messages="$errors->get('name')" />
+
+        <div class="form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">User Name <span class="required text-danger">*</span></label>
+
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <input type="text" id="name" class="form-control col-md-7 col-xs-12 @error('name') is-invalid @enderror" name="name" value="{{Auth::user()->name}}" required autocomplete="name">
+
+              @error('name')
+                  <span class="text-danger">{{ $message }}</span>
+              @enderror
+            </div>
+            
         </div>
 
-        <div>
+        <div class="form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">User Email <span class="required text-danger">*</span></label>
+
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <input disabled type="email" id="email" class="form-control col-md-7 col-xs-12  @error('email') is-invalid @enderror" name="email" value="{{Auth::user()->email}}" required  autocomplete="username">
+
+              @error('email')
+                  <span class="text-danger">{{ $message }}</span>
+              @enderror
+            </div>
+            @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())
+                <div>
+                    <p class="text-sm mt-2 text-gray-800">
+                        {{ __('Your email address is unverified.') }}
+
+                        <button form="send-verification" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            {{ __('Click here to re-send the verification email.') }}
+                        </button>
+                    </p>
+
+                    @if (session('status') === 'verification-link-sent')
+                        <p class="mt-2 font-medium text-sm text-green-600">
+                            {{ __('A new verification link has been sent to your email address.') }}
+                        </p>
+                    @endif
+                </div>
+            @endif
+            
+        </div>
+
+
+        {{-- <div>
             <x-input-label for="email" :value="__('Email')" />
             <x-text-input id="email" name="email" type="email" class="mt-1 block w-full" :value="old('email', $user->email)" required autocomplete="username" />
             <x-input-error class="mt-2" :messages="$errors->get('email')" />
@@ -45,10 +84,10 @@
                     @endif
                 </div>
             @endif
-        </div>
+        </div> --}}
 
         <div class="flex items-center gap-4">
-            <x-primary-button>{{ __('Save') }}</x-primary-button>
+            <button class="btn btn-info" >Save</button>
 
             @if (session('status') === 'profile-updated')
                 <p

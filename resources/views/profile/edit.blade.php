@@ -1,29 +1,72 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Profile') }}
-        </h2>
-    </x-slot>
+@extends('layouts.app')
+@section('content')
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
-            <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
-                <div class="max-w-xl">
-                    @include('profile.partials.update-profile-information-form')
-                </div>
-            </div>
+<div class="right_col" role="main">
+    <div class="">
+      <div class="page-title">
+        <div class="title_left">
+          <h3>Information</h3>
+        </div>
+      </div>
 
-            <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
-                <div class="max-w-xl">
-                    @include('profile.partials.update-password-form')
-                </div>
-            </div>
+      <div class="clearfix"></div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_content"><br />
 
-            <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
-                <div class="max-w-xl">
-                    @include('profile.partials.delete-user-form')
+                        <div class="form-horizontal form-label-left">
+                            <div class="form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name"></label>
+
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    @include('profile.partials.update-profile-information-form')
+                                    
+                                </div>
+                            </div>
+                            <div class="ln_solid"></div>
+                        </div>
+
+                        <div class="form-horizontal form-label-left">
+                            <div class="form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name"></label>
+
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    @include('profile.partials.profile_update')
+                                    
+                                </div>
+                            </div>
+                            <div class="ln_solid"></div>
+                        </div>
+
+                        <div class="form-horizontal form-label-left">
+                            <div class="form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name"></label>
+  
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    @include('profile.partials.update-password-form')
+                                  
+                                </div>
+                            </div>
+                            <div class="ln_solid"></div>
+                        </div>
+
+                        <div class="form-horizontal form-label-left">
+                            <div class="form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name"></label>
+  
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    @include('profile.partials.delete-user-form')
+                                  
+                                </div>
+                            </div>
+                            <div class="ln_solid"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</x-app-layout>
+</div>
+    
+@endsection
