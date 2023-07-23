@@ -1,4 +1,13 @@
 <section>
+
+
+{{-- @php
+    $user = DB::table('users')->where('id')->get();
+    $update = DB::table('update__profiles')->where('user_id', '=', $user)->get();
+@endphp --}}
+
+
+
     <header>
         <h2 class="text-lg font-medium text-gray-900">
             {{ __('Your Information') }}
@@ -22,7 +31,7 @@
             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Name <span class="required text-danger">*</span></label>
 
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <input type="text" id="name" class="form-control col-md-7 col-xs-12 @error('name') is-invalid @enderror" name="name"  required autocomplete="name">
+              <input type="text" id="name" class="form-control col-md-7 col-xs-12 @error('name') is-invalid @enderror" name="name" required autocomplete="name">
 
               @error('name')
                   <span class="text-danger">{{ $message }}</span>
