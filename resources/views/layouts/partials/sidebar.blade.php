@@ -63,7 +63,7 @@
 
         <li><a><i class="fa fa-graduation-cap"></i> Students <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu">
-              <li><a href="form.html">Student Information</a></li>
+              <li><a href="{{ route('student.info') }}">Student Information</a></li>
               <li><a href="form.html">Add Student</a></li>
               <li><a href="form.html">Manage Students</a></li>
             </ul>

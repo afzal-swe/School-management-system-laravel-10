@@ -77,7 +77,7 @@
                                   @enderror
                                 </div>
                                 
-                              </div>
+                            </div>
 
                       
                             <div class="ln_solid"></div>
