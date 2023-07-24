@@ -62,6 +62,8 @@ Route::post('/user/type/store', [UserTypeController::class, 'store'])->name('use
 
 // User type Route Section //
 Route::get('/all/student', [StudentController::class, 'view'])->name('student.info')->middleware(['auth', 'verified']);
+Route::get('/student/register', [StudentController::class, 'register_create'])->name('student_register.create');
+Route::post('/student/store', [StudentController::class, 'student_store'])->name('student.store');
 
 
 

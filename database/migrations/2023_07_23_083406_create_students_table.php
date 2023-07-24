@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id')->nullable(); // unsignedBigInteger its mean forign key defind do it.
+            // $table->unsignedBigInteger('user_id')->nullable(); // unsignedBigInteger its mean forign key defind do it.
+            // $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
             $table->string('stu_name')->nullable(); // unsignedBigInteger its mean forign key defind do it.
             $table->string('stu_id')->nullable();
             $table->string('stu_phone')->nullable();
@@ -28,7 +30,6 @@ return new class extends Migration
             $table->string('stu_stu_pass')->nullable();
             $table->string('stu_status')->default(0);
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

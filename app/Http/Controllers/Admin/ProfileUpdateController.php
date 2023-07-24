@@ -28,7 +28,10 @@ class ProfileUpdateController extends Controller
 
     public function advance_info()
     {
-        $user = Auth::user()->name;
-        return view('admin.student.advance_info', compact('user'));
+        if (Auth::id()) {
+            $id = Auth::user()->id;
+            $user = Update_Profile::where('user_id', '=', $id)->get();
+            return view('admin.student.advance_info', compact('user'));
+        }
     }
 }
