@@ -34,8 +34,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     // Update Profile Route Section //
-    Route::get('/profile', [ProfileUpdateController::class, 'edit_profile'])->name('update_profile.edit');
-    Route::post('/profile', [ProfileUpdateController::class, 'update_profile'])->name('profile_update.update');
     Route::get('/profile/advance/info', [ProfileUpdateController::class, 'advance_info'])->name('advance_info.edit');
 });
 

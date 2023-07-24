@@ -12,7 +12,7 @@ class Student extends Model
 
     protected $guarded = [];
 
-    public function user()
+    public function user_name()
     {
         return $this->belongsTo(User::class, 'user_id'); // class_id is frogn key
     }

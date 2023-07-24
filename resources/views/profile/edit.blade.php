@@ -27,17 +27,6 @@
                             <div class="ln_solid"></div>
                         </div>
 
-                        <div class="form-horizontal form-label-left">
-                            <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name"></label>
-
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    @include('profile.partials.profile_update')
-                                    
-                                </div>
-                            </div>
-                            <div class="ln_solid"></div>
-                        </div>
 
                         <div class="form-horizontal form-label-left">
                             <div class="form-group">

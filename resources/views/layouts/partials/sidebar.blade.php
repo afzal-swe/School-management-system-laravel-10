@@ -29,7 +29,7 @@
 
         <li><a><i class="fa fa-user"></i> Profile <span class="fa fa-chevron-down"></span></a>
           <ul class="nav child_menu">
-            <li><a href="{{ route('update_profile.edit') }}">Update Profile</a></li>
+            <li><a href="{{ route('profile.edit') }}">Update Profile</a></li>
           </ul>
         </li>
 
