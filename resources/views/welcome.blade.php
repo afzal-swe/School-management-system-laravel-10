@@ -36,7 +36,7 @@
                       <div class="separator">
                         <p class="change_link">New to site?
                           <a href="{{ route('student_register.create') }}" class="to_register"> Student Account /</a>
-                          <a href="{{ route('register') }}" class="to_register">Teacher Account</a>
+                          <a href="{{ route('teacher_register.create') }}" class="to_register">Teacher Account</a>
                         </p>
         
                         <div class="clearfix"></div>

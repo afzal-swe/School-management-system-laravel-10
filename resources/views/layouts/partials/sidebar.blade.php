@@ -56,6 +56,7 @@
 
         <li><a><i class="fa fa-edit"></i> Teachers <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu">
+              <li><a href="{{ route('teacher.info') }}">Teacher's Information</a></li>
               <li><a href="form.html">Add Teacher</a></li>
               <li><a href="form.html">Manage Teachers</a></li>
             </ul>

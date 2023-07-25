@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\DepartmentController;
 use App\Http\Controllers\Admin\UserTypeController;
 use App\Http\Controllers\Admin\ProfileUpdateController;
 use App\Http\Controllers\Admin\StudentController;
+use App\Http\Controllers\Admin\TeacherController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,10 +59,15 @@ Route::get('/user/type', [UserTypeController::class, 'index'])->name('user_type.
 Route::get('/user/type/add', [UserTypeController::class, 'create'])->name('user_type.create')->middleware(['auth', 'verified']);
 Route::post('/user/type/store', [UserTypeController::class, 'store'])->name('user_type.store')->middleware(['auth', 'verified']);
 
-// User type Route Section //
+// Student Route Section //
 Route::get('/all/student', [StudentController::class, 'view'])->name('student.info')->middleware(['auth', 'verified']);
 Route::get('/student/register', [StudentController::class, 'register_create'])->name('student_register.create');
 Route::post('/student/store', [StudentController::class, 'student_store'])->name('student.store');
+
+// Teacher Route Section //
+Route::get('/all/teacher', [TeacherController::class, 'view'])->name('teacher.info')->middleware(['auth', 'verified']);
+Route::get('/teacher/register', [TeacherController::class, 'register_create'])->name('teacher_register.create');
+Route::post('/teacher/store', [TeacherController::class, 'student_store'])->name('teacher.store');
 
 
 
