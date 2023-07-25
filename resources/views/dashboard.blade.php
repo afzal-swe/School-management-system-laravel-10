@@ -1,72 +1,50 @@
 @extends('layouts.app')
 @section('content')
+
 <div class="right_col" role="main">
     <div class="">
       <div class="row top_tiles">
         <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
           <div class="tile-stats">
-            <div class="icon"><i class="fa fa-caret-square-o-right"></i></div>
-            <div class="count">179</div>
-            <h3>Total Students</h3>
+            <div class="icon"><i class="fa fa-graduation-cap text-info" aria-hidden="true"></i></i></div>
+            @php
+               $student = DB::table('students')->get();
+            @endphp
+            <div class="count  "><samp class="text-success">{{ count($student)}}</samp></div>
+            <h3 style="color: green;">Total Students</h3>
             <p>Lorem ipsum psdea itgum rixt.</p>
           </div>
         </div>
         <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
           <div class="tile-stats">
-            <div class="icon"><i class="fa fa-comments-o"></i></div>
-            <div class="count">179</div>
-            <h3>Total Teachers</h3>
+            <div class="icon"><i class="fa fa-user text-info" aria-hidden="true"></i></div>
+            @php
+               $teacher = DB::table('teachers')->get();
+            @endphp
+            <div class="count"><samp class="text-success">{{ count($teacher)}}</samp></div>
+            <h3 style="color: green;">Total Teachers</h3>
             <p>Lorem ipsum psdea itgum rixt.</p>
           </div>
         </div>
         <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
           <div class="tile-stats">
-            <div class="icon"><i class="fa fa-sort-amount-desc"></i></div>
-            <div class="count">179</div>
-            <h3>Total Books</h3>
+            <div class="icon"><i class="fa fa-book text-info" aria-hidden="true"></i></div>
+            @php
+               $subjects = DB::table('subjects')->get();
+            @endphp
+            <div class="count"><samp class="text-success">{{ count($subjects)}}</samp></div>
+            <h3 style="color: green;">Total Books</h3>
             <p>Lorem ipsum psdea itgum rixt.</p>
           </div>
         </div>
         <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
           <div class="tile-stats">
-            <div class="icon"><i class="fa fa-check-square-o"></i></div>
-            <div class="count">179</div>
-            <h3>Total Users</h3>
-            <p>Lorem ipsum psdea itgum rixt.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="row top_tiles">
-        <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-          <div class="tile-stats">
-            <div class="icon"><i class="fa fa-caret-square-o-right"></i></div>
-            <div class="count">179</div>
-            <h3>Departments</h3>
-            <p>Lorem ipsum psdea itgum rixt.</p>
-          </div>
-        </div>
-        <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-          <div class="tile-stats">
-            <div class="icon"><i class="fa fa-comments-o"></i></div>
-            <div class="count">179</div>
-            <h3>Student New Register</h3>
-            <p>Lorem ipsum psdea itgum rixt.</p>
-          </div>
-        </div>
-        <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-          <div class="tile-stats">
-            <div class="icon"><i class="fa fa-sort-amount-desc"></i></div>
-            <div class="count">179</div>
-            <h3>Total Classes</h3>
-            <p>Lorem ipsum psdea itgum rixt.</p>
-          </div>
-        </div>
-        <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-          <div class="tile-stats">
-            <div class="icon"><i class="fa fa-check-square-o"></i></div>
-            <div class="count">179</div>
-            <h3>Total Cource</h3>
+            <div class="icon"><i class="fa fa-users text-info" aria-hidden="true"></i></div>
+            @php
+               $users = DB::table('users')->get();
+            @endphp
+            <div class="count"><samp class="text-success">{{ count($users)}}</samp></div>
+            <h3 style="color: green;">Total Users</h3>
             <p>Lorem ipsum psdea itgum rixt.</p>
           </div>
         </div>
@@ -75,33 +53,45 @@
       <div class="row top_tiles">
         <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
           <div class="tile-stats">
-            <div class="icon"><i class="fa fa-caret-square-o-right"></i></div>
-            <div class="count">179</div>
-            <h3>Students Attendance</h3>
+            <div class="icon"><i class="fa fa-building text-info" aria-hidden="true"></i></div>
+            @php
+               $departments = DB::table('departments')->get();
+            @endphp
+            <div class="count"><samp class="text-success">{{ count($departments)}}</samp></div>
+            <h3 style="color: green;">Departments</h3>
             <p>Lorem ipsum psdea itgum rixt.</p>
           </div>
         </div>
         <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
           <div class="tile-stats">
-            <div class="icon"><i class="fa fa-comments-o"></i></div>
+            <div class="icon"><i class="fa fa-registered text-info" aria-hidden="true"></i></i></div>
+            @php
+               $departments = DB::table('departments')->get();
+            @endphp
             <div class="count">179</div>
-            <h3>Teachers Attendance</h3>
+            <h3 style="color: green;">New Register</h3>
             <p>Lorem ipsum psdea itgum rixt.</p>
           </div>
         </div>
         <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
           <div class="tile-stats">
-            <div class="icon"><i class="fa fa-sort-amount-desc"></i></div>
-            <div class="count">179</div>
-            <h3>Libraria Attendance</h3>
+            <div class="icon"><i class="fa fa-building text-info" aria-hidden="true"></i></div>
+            @php
+               $classes = DB::table('classes')->get();
+            @endphp
+            <div class="count"><samp class="text-success">{{ count($classes)}}</samp></div>
+            <h3 style="color: green;">Total Classes</h3>
             <p>Lorem ipsum psdea itgum rixt.</p>
           </div>
         </div>
         <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
           <div class="tile-stats">
-            <div class="icon"><i class="fa fa-check-square-o"></i></div>
-            <div class="count">179</div>
-            <h3>Total Attendance</h3>
+            <div class="icon"><i class="fa fa-book text-info" aria-hidden="true"></i></div>
+            @php
+            $subjects = DB::table('subjects')->get();
+            @endphp
+            <div class="count"><samp class="text-success">{{ count($subjects)}}</samp></div>
+            <h3 style="color: green;">Total Cource</h3>
             <p>Lorem ipsum psdea itgum rixt.</p>
           </div>
         </div>
@@ -110,33 +100,68 @@
       <div class="row top_tiles">
         <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
           <div class="tile-stats">
-            <div class="icon"><i class="fa fa-caret-square-o-right"></i></div>
+            <div class="icon"><i class="fa fa-check-circle-o text-info" aria-hidden="true"></i></div>
             <div class="count">179</div>
-            <h3>Total Payable</h3>
+            <h3 style="color: green;">Students Attendance</h3>
             <p>Lorem ipsum psdea itgum rixt.</p>
           </div>
         </div>
         <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
           <div class="tile-stats">
-            <div class="icon"><i class="fa fa-comments-o"></i></div>
+            <div class="icon"><i class="fa fa-check-circle-o text-info" aria-hidden="true"></i></div>
             <div class="count">179</div>
-            <h3>Total Paid</h3>
+            <h3 style="color: green;">Teachers Attendance</h3>
             <p>Lorem ipsum psdea itgum rixt.</p>
           </div>
         </div>
         <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
           <div class="tile-stats">
-            <div class="icon"><i class="fa fa-sort-amount-desc"></i></div>
+            <div class="icon"><i class="fa fa-check-circle-o text-info" aria-hidden="true"></i></div>
             <div class="count">179</div>
-            <h3>Total Due</h3>
+            <h3 style="color: green;">Libraria Attendance</h3>
             <p>Lorem ipsum psdea itgum rixt.</p>
           </div>
         </div>
         <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
           <div class="tile-stats">
-            <div class="icon"><i class="fa fa-check-square-o"></i></div>
+            <div class="icon"><i class="fa fa-check-circle-o text-info" aria-hidden="true"></i></div>
             <div class="count">179</div>
-            <h3>Extra TK</h3>
+            <h3 style="color: green;">Total Attendance</h3>
+            <p>Lorem ipsum psdea itgum rixt.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row top_tiles">
+        <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+          <div class="tile-stats">
+            <div class="icon"><i class="fa fa-university text-info" aria-hidden="true"></i></div>
+            <div class="count">179</div>
+            <h3 style="color: green;">Total Payable</h3>
+            <p>Lorem ipsum psdea itgum rixt.</p>
+          </div>
+        </div>
+        <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+          <div class="tile-stats">
+            <div class="icon"><i class="fa fa-check-square-o text-info"></i></div>
+            <div class="count">179</div>
+            <h3 style="color: green;">Total Paid</h3>
+            <p>Lorem ipsum psdea itgum rixt.</p>
+          </div>
+        </div>
+        <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+          <div class="tile-stats">
+            <div class="icon"><i class="fa fa-check-square-o text-danger"></i></div>
+            <div class="count">179</div>
+            <h3 style="color: green;">Total Due</h3>
+            <p>Lorem ipsum psdea itgum rixt.</p>
+          </div>
+        </div>
+        <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+          <div class="tile-stats">
+            <div class="icon"><i class="fa fa-sort-amount-desc text-info" aria-hidden="true"></i></div>
+            <div class="count">179</div>
+            <h3 style="color: green;">Extra TK</h3>
             <p>Lorem ipsum psdea itgum rixt.</p>
           </div>
         </div>
