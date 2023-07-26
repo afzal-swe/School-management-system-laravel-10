@@ -9,6 +9,8 @@ use App\Http\Controllers\Admin\UserTypeController;
 use App\Http\Controllers\Admin\ProfileUpdateController;
 use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Admin\TeacherController;
+use App\Http\Controllers\Admin\SeoController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -68,6 +70,11 @@ Route::post('/student/store', [StudentController::class, 'student_store'])->name
 Route::get('/all/teacher', [TeacherController::class, 'view'])->name('teacher.info')->middleware(['auth', 'verified']);
 Route::get('/teacher/register', [TeacherController::class, 'register_create'])->name('teacher_register.create');
 Route::post('/teacher/store', [TeacherController::class, 'student_store'])->name('teacher.store');
+
+// SEO Route Section //
+Route::get('/seo', [SeoController::class, 'seo'])->name('seo.setting')->middleware(['auth', 'verified']);
+Route::post('/seo/update/{id}', [SeoController::class, 'update'])->name('seo.update')->middleware(['auth', 'verified']);
+
 
 
 
