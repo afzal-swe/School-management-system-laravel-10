@@ -20,6 +20,18 @@
                     </div><br>
 
                     <div>
+                        <select name="user_status" id="" class="form-control  @error('user_status') is-invalid @enderror">
+                          <option value="" disabled selected name="user_status">Choose Type</option>
+                          <option value="3" disabled>Student</option>
+                          <option value="2" >Teacher</option>
+                          
+                        </select>
+                        @error('user_status')
+                              <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div><br>
+
+                    <div>
                         <input class="form-control" type="text" name="name" value="{{old('name')}}" placeholder="Full Name" autocomplete="stu_name" />
                     </div>
 

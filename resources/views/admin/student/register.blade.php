@@ -10,7 +10,18 @@
                     @csrf
                     <h1>Student Account</h1>
 
-                    
+                    <div>
+                        <select name="user_status" id="" class="form-control  @error('user_status') is-invalid @enderror">
+                          <option value="" disabled selected name="user_status">Choose Type</option>
+                          <option value="3">Student</option>
+                          <option value="2" disabled>Teacher</option>
+                          
+                        </select>
+                        @error('user_status')
+                              <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div><br>
+
                     <div>
                         <input class="form-control" type="text" name="name" placeholder="Full Name" autocomplete="username" />
                     </div>

@@ -34,6 +34,7 @@ class StudentController extends Controller
 
             'name' => $request->name,
             'user_name' => $request->user_name,
+            'user_status' => $request->user_status,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
