@@ -13,22 +13,20 @@ return new class extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
-            // $table->unsignedBigInteger('user_id')->nullable(); // unsignedBigInteger its mean forign key defind do it.
-            // $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
-            $table->string('stu_name')->nullable(); // unsignedBigInteger its mean forign key defind do it.
-            $table->string('stu_id')->nullable();
-            $table->string('stu_phone')->nullable();
-            $table->string('stu_father')->nullable();
-            $table->string('stu_mother')->nullable();
-            $table->string('stu_barth')->nullable();
-            $table->string('stu_address')->nullable();
-            $table->string('stu_email')->nullable();
-            $table->string('stu_image')->nullable();
+            $table->string('name')->nullable(); // unsignedBigInteger its mean forign key defind do it.
+            $table->string('s_id')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('father')->nullable();
+            $table->string('mother')->nullable();
+            $table->string('barth')->nullable();
+            $table->string('address')->nullable();
+            $table->string('email')->nullable();
+            $table->string('image')->nullable();
             $table->string('zip_code')->nullable();
             $table->string('post_code')->nullable();
-            $table->string('stu_stu_pass')->nullable();
-            $table->string('stu_status')->default(0);
+            $table->string('pass')->nullable();
+            $table->string('status')->default(0);
             $table->timestamps();
         });
     }

@@ -35,6 +35,7 @@ class TeacherController extends Controller
         $user = User::create([
 
             'name' => $request->name,
+            'user_name' => $request->user_name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
@@ -45,10 +46,10 @@ class TeacherController extends Controller
             Teacher::create([
                 'user_id' => $user->id,
                 'department_id' => $request->department_id,
-                't_name' => $request->name,
-                't_phone' => $request->stu_phone,
-                't_email' => $request->email,
-                't_pass' => Hash::make($request->password),
+                'name' => $request->name,
+                'phone' => $request->phone,
+                'email' => $request->email,
+                'pass' => Hash::make($request->password),
             ]);
         }
 

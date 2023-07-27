@@ -33,6 +33,7 @@ class StudentController extends Controller
         $user = User::create([
 
             'name' => $request->name,
+            'user_name' => $request->user_name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
@@ -42,15 +43,15 @@ class StudentController extends Controller
         if ($user) {
             Student::create([
                 'user_id' => $user->id,
-                'stu_name' => $request->name,
-                'stu_phone' => $request->stu_phone,
-                'stu_email' => $request->email,
-                'stu_stu_pass' => Hash::make($request->password),
+                'name' => $request->name,
+                'phone' => $request->phone,
+                'email' => $request->email,
+                'pass' => Hash::make($request->password),
             ]);
         }
 
 
-        $notification = array('message' => 'Register Successfully', 'alert-type' => 'success');
+        $notification = array('message' => 'Student Registration Successfully', 'alert-type' => 'success');
         return redirect()->route('login')->with($notification);
     }
 }

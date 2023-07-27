@@ -15,19 +15,19 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
             $table->foreignId('department_id')->constrained('departments')->cascadeOnDelete();
-            $table->string('t_name')->nullable(); // unsignedBigInteger its mean forign key defind do it.
+            $table->string('name')->nullable(); // unsignedBigInteger its mean forign key defind do it.
             $table->string('t_id')->nullable();
-            $table->string('t_phone')->nullable();
-            $table->string('t_father')->nullable();
-            $table->string('t_mother')->nullable();
-            $table->string('t_barth')->nullable();
-            $table->string('t_address')->nullable();
-            $table->string('t_email')->nullable();
-            $table->string('t_image')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('father')->nullable();
+            $table->string('mother')->nullable();
+            $table->string('barth')->nullable();
+            $table->string('address')->nullable();
+            $table->string('email')->nullable();
+            $table->string('image')->nullable();
             $table->string('zip_code')->nullable();
             $table->string('post_code')->nullable();
-            $table->string('t_pass')->nullable();
-            $table->string('t_status')->default(0);
+            $table->string('pass')->nullable();
+            $table->string('status')->default(0);
             $table->timestamps();
         });
     }

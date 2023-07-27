@@ -20,11 +20,11 @@
                     </div><br>
 
                     <div>
-                        <input class="form-control" type="text" name="stu_name" value="{{old('stu_name')}}" placeholder="Full Name" autocomplete="stu_name" />
+                        <input class="form-control" type="text" name="name" value="{{old('name')}}" placeholder="Full Name" autocomplete="stu_name" />
                     </div>
 
                     <div>
-                        <input class="form-control" type="text" name="name" value="{{old('name')}}" placeholder="Username" required autocomplete="username" />
+                        <input class="form-control" type="text" name="user_name" value="{{old('user_name')}}" placeholder="Username" required autocomplete="username" />
                     </div>
 
                     <div>
@@ -32,7 +32,7 @@
                     </div>
                     <div>
 
-                        <input id="stu_phone" class="form-control" type="number" name="stu_phone" value="{{old('stu_phone')}}" placeholder="Phone" autocomplete="username" /><br>
+                        <input id="stu_phone" class="form-control" type="number" name="phone" value="{{old('phone')}}" placeholder="Phone" autocomplete="username" /><br>
                     </div>
 
                     <div>

@@ -13,19 +13,43 @@ class ProfileUpdateController extends Controller
 {
 
 
-    // public function edit_profile(Request $request)
-    // {
-    //     return view('profile.edit', [
-    //         'user' => $request->user(),
-    //     ]);
-    // }
-
     public function advance_info()
     {
-        if (Auth::id()) {
-            $id = Auth::user()->id;
-            $user = Student::where('user_id', '=', $id)->get();
-            return view('admin.student.advance_info', compact('user'));
+
+        $user = Auth::user();
+
+        $student = Student::where('user_id', '=', $user->id)->first();
+        return view('admin.student.advance_info', compact('student'));
+    }
+
+    public function advance_info_update(Request $request, $id)
+    {
+
+
+        $user = User::findOrFail($id)->update([
+            'name' => $request->name,
+            'user_name' => $request->user_name,
+            'email' => $request->email,
+        ]);
+
+
+        if ($user) {
+            Student::findOrFail($id)->update([
+
+                'name' => $request->name,
+                'phone' => $request->phone,
+                'email' => $request->email,
+                'barth' => $request->barth,
+                'father' => $request->father,
+                'mother' => $request->mother,
+                'address' => $request->address,
+                'post_code' => $request->post_code,
+                'zip_code' => $request->zip_code,
+                's_id' => $request->s_id,
+            ]);
         }
+
+        $notification = array('message' => 'Profile Update Successfully', 'alert-type' => 'success');
+        return redirect()->back()->with($notification);
     }
 }

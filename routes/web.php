@@ -38,6 +38,7 @@ Route::middleware('auth')->group(function () {
 
     // Update Profile Route Section //
     Route::get('/profile/advance/info', [ProfileUpdateController::class, 'advance_info'])->name('advance_info.edit');
+    Route::post('/profile/update/{id}', [ProfileUpdateController::class, 'advance_info_update'])->name('advance_info.update');
 });
 
 

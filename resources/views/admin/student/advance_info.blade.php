@@ -44,143 +44,123 @@
                           </ul>
                           <div class="clearfix"></div>
                         </div>
+                        <div>
+                          
+                        </div>
                         <div class="x_content">
                           <br />
 
-                          <form class="form-horizontal form-label-left" action="#" method="POST">
+                          <form class="form-horizontal form-label-left" action="{{ route('advance_info.update',$student->id) }}" method="POST">
                             @csrf
                             
 
+                            
+
                             <div class="form-group">
-                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">User Name <span class="required text-danger">*</span></label>
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">User Name <span class="text-danger">*</span></label>
 
                               <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="text" id="class" class="form-control col-md-7 col-xs-12 " name="class">
+                                <input type="text" class="form-control col-md-7 col-xs-12 " name="user_name" value="{{ $student->user_name->user_name }}">
 
                               </div>
                             </div>
 
                             <div class="form-group">
-                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Full Name <span class="required text-danger">*</span></label>
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Full Name <span class="text-danger">*</span></label>
 
                               <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="text" id="stu_name" class="form-control col-md-7 col-xs-12 @error('stu_name') is-invalid @enderror" name="stu_name">
-
-                                @error('stu_name')
-                                    <span class="text-danger">{{ $message }}</span>
-                                @enderror
+                                <input type="text" class="form-control col-md-7 col-xs-12" name="name" value="{{ $student->name }}">
                               </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Phone Number <span class="required text-danger">*</span></label>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Phone Number <span class="text-danger">*</span></label>
   
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                  <input type="text" id="stu_phone" class="form-control col-md-7 col-xs-12 @error('stu_phone') is-invalid @enderror" name="stu_phone" placeholder="01XXXXXXXXX">
-  
-                                  @error('stu_phone')
-                                      <span class="text-danger">{{ $message }}</span>
-                                  @enderror
+                                  <input type="text" id="stu_phone" class="form-control col-md-7 col-xs-12" name="phone" value="{{ $student->phone }}">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">E-mail <span class="required text-danger">*</span></label>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">E-mail <span class="text-danger">*</span></label>
 
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="email" id="stu_email" class="form-control col-md-7 col-xs-12 @error('stu_email') is-invalid @enderror" name="stu_email" placeholder="example@gmail.com">
+                                <input type="email" id="stu_email" class="form-control col-md-7 col-xs-12" name="email" value="{{ $student->email }}">
 
-                                @error('stu_email')
-                                    <span class="text-danger">{{ $message }}</span>
-                                @enderror
                             </div>
                             </div>
 
                             <div class="form-group">
-                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">ID Number <span class="required text-danger">*</span></label>
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">ID Number <span class="text-danger">*</span></label>
 
                               <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="text" id="stu_id" class="form-control col-md-7 col-xs-12 @error('stu_id') is-invalid @enderror" name="stu_id" placeholder="ID Number">
+                                <input type="text" id="stu_id" class="form-control col-md-7 col-xs-12" name="s_id" value="{{ $student->s_id }}">
 
-                                @error('stu_id')
-                                    <span class="text-danger">{{ $message }}</span>
-                                @enderror
+                                
                               </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Date of Barth <span class="required text-danger">*</span></label>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Date of Barth <span class="text-danger">*</span></label>
   
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                  <input type="date" id="stu_barth" class="form-control col-md-7 col-xs-12 @error('stu_barth') is-invalid @enderror" name="stu_barth" placeholder="Date of Barth">
+                                  <input type="date" id="stu_barth" class="form-control col-md-7 col-xs-12" name="barth" value="{{ $student->barth }}">
   
-                                  @error('stu_barth')
-                                      <span class="text-danger">{{ $message }}</span>
-                                  @enderror
+                                  
                                 </div>
                             </div>
   
 
 
                             <div class="form-group">
-                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Father's Name <span class="required text-danger">*</span></label>
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Father's Name <span class="text-danger">*</span></label>
 
                               <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="text" id="stu_father" class="form-control col-md-7 col-xs-12 @error('stu_father') is-invalid @enderror" name="stu_father" placeholder="Father's Name">
+                                <input type="text" id="stu_father" class="form-control col-md-7 col-xs-12" name="father" value="{{ $student->father }}">
 
-                                @error('stu_father')
-                                    <span class="text-danger">{{ $message }}</span>
-                                @enderror
+                                
                               </div>
                             </div>
 
                             <div class="form-group">
-                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Mother's Name <span class="required text-danger">*</span></label>
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Mother's Name <span class="text-danger">*</span></label>
 
                               <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="text" id="stu_mother" class="form-control col-md-7 col-xs-12 @error('stu_mother') is-invalid @enderror" name="stu_mother" placeholder="Mother's Name">
+                                <input type="text" id="stu_mother" class="form-control col-md-7 col-xs-12" name="mother" value="{{ $student->mother }}">
 
-                                @error('stu_mother')
-                                    <span class="text-danger">{{ $message }}</span>
-                                @enderror
+                                
                               </div>
                             </div>
 
                             
                             <div class="form-group">
-                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Address <span class="required text-danger">*</span></label>
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Address <span class="text-danger">*</span></label>
 
                               <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="text" id="stu_address" class="form-control col-md-7 col-xs-12 @error('stu_address') is-invalid @enderror" name="stu_address" placeholder="Address">
+                                <input type="text" id="stu_address" class="form-control col-md-7 col-xs-12" name="address" value="{{ $student->address }}">
 
-                                @error('stu_address')
-                                    <span class="text-danger">{{ $message }}</span>
-                                @enderror
+                                
                               </div>
                             </div>
 
                             
 
                             <div class="form-group">
-                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Zip Code <span class="required text-danger">*</span></label>
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Zip Code <span class="text-danger">*</span></label>
 
                               <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="text" id="zip_code" class="form-control col-md-7 col-xs-12 @error('zip_code') is-invalid @enderror" name="zip_code" placeholder="Zip Code">
+                                <input type="text" id="zip_code" class="form-control col-md-7 col-xs-12" name="zip_code" value="{{ $student->zip_code }}">
 
-                                @error('zip_code')
-                                    <span class="text-danger">{{ $message }}</span>
-                                @enderror
+                                
                               </div>
                             </div>
                             <div class="form-group">
-                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Post Code <span class="required text-danger">*</span></label>
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Post Code <span class="text-danger">*</span></label>
 
                               <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="text" id="post_code" class="form-control col-md-7 col-xs-12 @error('post_code') is-invalid @enderror" name="post_code" placeholder="Post Code">
+                                <input type="text" id="post_code" class="form-control col-md-7 col-xs-12" name="post_code" value="{{ $student->post_code }}">
 
-                                @error('post_code')
-                                    <span class="text-danger">{{ $message }}</span>
-                                @enderror
+                                
                               </div>
                             </div>
 
@@ -189,7 +169,7 @@
                               <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Profile Image </label>
 
                               <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="file" id="stu_image" class="form-control col-md-7 col-xs-12" name="stu_image" >
+                                <input type="file" id="stu_image" class="form-control col-md-7 col-xs-12" name="image" >
 
                                 
                               </div>
@@ -198,8 +178,7 @@
                             <div class="ln_solid"></div>
                             <div class="form-group">
                               <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                                <button class="btn btn-primary" type="button">Cancel</button>
-                                <button class="btn btn-primary" type="reset">Reset</button>
+                               
                                 <button type="submit" class="btn btn-success">Submit</button>
                               </div>
                             </div>

@@ -10,20 +10,21 @@
                     @csrf
                     <h1>Student Account</h1>
 
+                    
                     <div>
-                        <input class="form-control" type="text" name="stu_name" value="{{old('stu_name')}}" placeholder="Full Name" autocomplete="stu_name" />
+                        <input class="form-control" type="text" name="name" placeholder="Full Name" autocomplete="username" />
                     </div>
 
                     <div>
-                        <input class="form-control" type="text" name="name" value="{{old('name')}}" placeholder="Username" required autocomplete="username" />
+                        <input class="form-control" type="text" name="user_name" placeholder="Username" required autocomplete="username" />
                     </div>
 
                     <div>
-                        <input id="email" class="form-control" type="email" name="email" value="{{old('email')}}" placeholder="E-mail" required autocomplete="username" />
+                        <input id="email" class="form-control" type="email" name="email" placeholder="E-mail" required autocomplete="username" />
                     </div>
                     <div>
 
-                        <input id="stu_phone" class="form-control" type="number" name="stu_phone" value="{{old('stu_phone')}}" placeholder="Phone" autocomplete="username" /><br>
+                        <input id="stu_phone" class="form-control" type="number" name="phone" placeholder="Phone" autocomplete="username" /><br>
                     </div>
 
                     <div>
