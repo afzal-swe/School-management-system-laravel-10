@@ -16,7 +16,8 @@ class TeacherController extends Controller
 
     public function view()
     {
-        return view('admin.teacher.view');
+        $teacher = Teacher::all();
+        return view('admin.teacher.view', compact('teacher'));
     }
 
     public function register_create()
