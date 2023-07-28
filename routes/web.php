@@ -71,6 +71,9 @@ Route::post('/student/store', [StudentController::class, 'student_store'])->name
 Route::get('/all/teacher', [TeacherController::class, 'view'])->name('teacher.info')->middleware(['auth', 'verified']);
 Route::get('/teacher/register', [TeacherController::class, 'register_create'])->name('teacher_register.create');
 Route::post('/teacher/store', [TeacherController::class, 'student_store'])->name('teacher.store');
+// Teacher Profile Update //
+Route::get('/teacher/profile', [TeacherController::class, 'teacher_profile'])->name('advance_teacher.edit');
+Route::post('/teacher/profile/update/{id}', [TeacherController::class, 'teacher_profil'])->name('teacher_info.update');
 
 // SEO Route Section //
 Route::get('/seo', [SeoController::class, 'seo'])->name('seo.setting')->middleware(['auth', 'verified']);

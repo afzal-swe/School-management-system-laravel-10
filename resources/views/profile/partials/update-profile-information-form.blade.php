@@ -1,6 +1,12 @@
 <section>
     <header>
-        <a href="{{ route('advance_info.edit') }}" class="btn btn-success btn-outline-light">Advance Profile</a><br><br>
+        
+        @if (Auth::user()->user_status==3)
+            <a href="{{ route('advance_info.edit') }}" class="btn btn-success btn-outline-light">Advance Profile</a><br><br>
+        @elseif(Auth::user()->user_status==2)
+            <a href="{{ route('advance_teacher.edit') }}" class="btn btn-success btn-outline-light">Advance Profile</a><br><br>
+        @endif
+        
         <h2 class="text-lg font-medium text-gray-900">
             {{ __('Profile Information') }}
         </h2>

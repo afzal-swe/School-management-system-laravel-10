@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Student;
+use App\Models\Teacher;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -50,5 +51,10 @@ class User extends Authenticatable implements MustVerifyEmail
     public function student()
     {
         return $this->hasMany(Student::class); // class_id is frogn key
+    }
+
+    public function teacher()
+    {
+        return $this->hasMany(Teacher::class); // class_id is frogn key
     }
 }

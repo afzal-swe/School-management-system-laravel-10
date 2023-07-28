@@ -8,6 +8,7 @@ use App\Models\Teacher;
 use App\Models\Department;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class TeacherController extends Controller
 {
@@ -57,5 +58,43 @@ class TeacherController extends Controller
 
         $notification = array('message' => 'Teacher Register Successfully', 'alert-type' => 'success');
         return redirect()->route('login')->with($notification);
+    }
+
+    // Teacher Profile Update // 
+    public function teacher_profile()
+    {
+        $user = Auth::user();
+
+        $teacher = Teacher::where('user_id', '=', $user->id)->first();
+        return view('admin.teacher.profile_update', compact('teacher'));
+    }
+
+    public function teacher_profil(Request $request, $id)
+    {
+        $user = User::findOrFail($id)->update([
+            'name' => $request->name,
+            'user_name' => $request->user_name,
+            'email' => $request->email,
+        ]);
+
+
+        if ($user) {
+            Teacher::findOrFail($id)->update([
+
+                'name' => $request->name,
+                'phone' => $request->phone,
+                'email' => $request->email,
+                'barth' => $request->barth,
+                'father' => $request->father,
+                'mother' => $request->mother,
+                'address' => $request->address,
+                'post_code' => $request->post_code,
+                'zip_code' => $request->zip_code,
+                't_id' => $request->t_id,
+            ]);
+        }
+
+        $notification = array('message' => 'Profile Update Successfully', 'alert-type' => 'success');
+        return redirect()->back()->with($notification);
     }
 }
