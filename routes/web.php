@@ -63,9 +63,13 @@ Route::get('/user/type/add', [UserTypeController::class, 'create'])->name('user_
 Route::post('/user/type/store', [UserTypeController::class, 'store'])->name('user_type.store')->middleware(['auth', 'verified']);
 
 // Student Route Section //
+Route::get('/student', [StudentController::class, 'index'])->name('student.index')->middleware(['auth', 'verified']);
 Route::get('/all/student', [StudentController::class, 'view'])->name('student.info')->middleware(['auth', 'verified']);
 Route::get('/student/register', [StudentController::class, 'register_create'])->name('student_register.create');
 Route::post('/student/store', [StudentController::class, 'student_store'])->name('student.store');
+
+
+
 
 // Teacher Route Section //
 Route::get('/teacher', [TeacherController::class, 'index'])->name('teacher.index')->middleware(['auth', 'verified']);

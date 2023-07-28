@@ -12,6 +12,12 @@ use Illuminate\Support\Facades\Auth;
 class StudentController extends Controller
 {
     //
+    public function index()
+    {
+        $student = Student::paginate(10);
+        return view('admin.student.index', compact('student'));
+    }
+
     public function view()
     {
         $student = Student::all();
