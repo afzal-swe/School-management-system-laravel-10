@@ -12,6 +12,11 @@ use Illuminate\Support\Facades\Auth;
 
 class TeacherController extends Controller
 {
+    public function index()
+    {
+        $all_teacher = Teacher::all();
+        return view('admin.teacher.index', compact('all_teacher'));
+    }
 
 
     public function view()
