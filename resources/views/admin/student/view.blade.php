@@ -5,7 +5,7 @@
     <div class="">
       <div class="page-title">
         <div class="title_left">
-          <h3>Tables <small>Students Information</small></h3>
+          <h3>Tables <small>Teacher Information</small></h3>
         </div>
 
         <div class="title_right">
@@ -42,41 +42,24 @@
                 </div>
                 <div class="x_content">
 
-                    <table class="table table-bordered">
+                  <table class="table table-bordered">
                         <div class="row top_tiles">
-                            <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                              <div class="tile-stats">
-                                <div class="icon"><i class="fa fa-caret-square-o-right"></i></div>
-                                <div class="count">179</div>
-                                <h3>Total Payable</h3>
-                                <p>Lorem ipsum psdea itgum rixt.</p>
-                              </div>
-                            </div>
-                            <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                              <div class="tile-stats">
-                                <div class="icon"><i class="fa fa-comments-o"></i></div>
-                                <div class="count">179</div>
-                                <h3>Total Paid</h3>
-                                <p>Lorem ipsum psdea itgum rixt.</p>
-                              </div>
-                            </div>
-                            <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                              <div class="tile-stats">
-                                <div class="icon"><i class="fa fa-sort-amount-desc"></i></div>
-                                <div class="count">179</div>
-                                <h3>Total Due</h3>
-                                <p>Lorem ipsum psdea itgum rixt.</p>
-                              </div>
-                            </div>
+                          @foreach ($student as $key=>$row)
+                          <a href="">
                             <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                               <div class="tile-stats">
                                 <div class="icon"><i class="fa fa-check-square-o"></i></div>
-                                <div class="count">179</div>
-                                <h3>Extra TK</h3>
-                                <p>Lorem ipsum psdea itgum rixt.</p>
+                                <div class="count text-info">{{ $row->s_id }}</div>
+                                <h3 style="color: green;">{{ $row->name }}</h3>
+                                <p>Department of </p>
                               </div>
                             </div>
-                          </div>
+                          </a>
+                          @endforeach
+                            
+
+                        </div>
+                  </table>
                 </div>
             </div>
         </div>

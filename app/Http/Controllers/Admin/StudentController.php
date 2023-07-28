@@ -14,7 +14,8 @@ class StudentController extends Controller
     //
     public function view()
     {
-        return view('admin.student.view');
+        $student = Student::all();
+        return view('admin.student.view', compact('student'));
     }
 
     public function register_create()
