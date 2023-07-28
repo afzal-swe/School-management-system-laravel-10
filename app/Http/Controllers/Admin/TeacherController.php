@@ -14,8 +14,48 @@ class TeacherController extends Controller
 {
     public function index()
     {
-        $all_teacher = Teacher::all();
+        $all_teacher = Teacher::paginate(10);
         return view('admin.teacher.index', compact('all_teacher'));
+    }
+
+    public function create()
+    {
+        $department = Department::all();
+        return view('admin.teacher.create', compact('department'));
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:' . User::class],
+            'password' => ['required', 'confirmed'],
+        ]);
+
+        $user_add = User::create([
+
+            'name' => $request->name,
+            'user_name' => $request->user_name,
+            'user_status' => $request->user_status,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+
+        // dd($user);
+
+        if ($user_add) {
+            Teacher::create([
+                'user_id' => $user_add->id,
+                'department_id' => $request->department_id,
+                't_id' => $request->t_id,
+                'name' => $request->name,
+                'phone' => $request->phone,
+                'email' => $request->email,
+                'pass' => Hash::make($request->password),
+            ]);
+        }
+        $notification = array('message' => 'Teacher Added Successfully', 'alert-type' => 'success');
+        return redirect()->back()->with($notification);
     }
 
 

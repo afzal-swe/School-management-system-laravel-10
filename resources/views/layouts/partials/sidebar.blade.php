@@ -67,7 +67,7 @@
               <ul class="nav child_menu">
                 <li><a href="{{ route('teacher.info') }}">Teacher's Information</a></li>
                 @if (Auth::user()->user_status==1)
-                <li><a href="form.html">Add Teacher</a></li>
+                <li><a href="{{ route('teacher.create') }}">Add Teacher</a></li>
                 <li><a href="{{ route('teacher.index') }}">Manage Teachers</a></li>
                 @endif
               </ul>
