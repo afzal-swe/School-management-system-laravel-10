@@ -56,6 +56,10 @@
           <li><a><i class="fa fa-book"></i> Libraria <span class="fa fa-chevron-down"></span></a>
               <ul class="nav child_menu">
                 <li><a href="{{ route('book.view') }}">All Books</a></li>
+                @if (Auth::user()->user_status==2)
+                <li><a href="#">Pending Book</a></li>
+                <li><a href="#">History</a></li>
+                @endif
                 @if (Auth::user()->user_status==1)
                 <li><a href="{{ route('book.create') }}">Add Books</a></li>
                 <li><a href="{{ route('book.index') }}">Manage Books</a></li>
@@ -121,8 +125,11 @@
 
           <li><a><i class="fa fa-edit"></i> Subject <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu">
+              <li><a href="#">Registration Subject</a></li>
+              @if (Auth::user()->user_status==1)
               <li><a href="{{ route('subject.create') }}">Create Subject</a></li>
               <li><a href="{{ route('subject.index') }}">Manage Subject</a></li>
+              @endif
             </ul>
           </li>
 
@@ -172,16 +179,19 @@
           <li><a><i class="fa fa-edit"></i> Event <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu">
               <li><a href="#">create Event</a></li>
-              <li><a href="form.html">Manage Event</a></li>
+              <li><a href="{{ route('event.index') }}">Manage Event</a></li>
             </ul>
           </li>
           @endif
           
 
-          <li><a><i class="fa fa-gear"></i> Setting <span class="fa fa-chevron-down"></span></a>
+          <li><a><i class="fa fa-gear"></i> Academic <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu">
-              <li><a href="form.html">Events</a></li>
+              <li><a href="form.html">Exam Routine</a></li>
+              <li><a href="form.html">Class Routine</a></li>
+              <li><a href="form.html">Syllabus</a></li>
               <li><a href="{{ route('notice.view') }}">Notice</a></li>
+              <li><a href="form.html">Events</a></li>
               @if (Auth::user()->user_status==1)
               <li><a href="{{ route('seo.setting') }}">SEO</a></li>
               @endif

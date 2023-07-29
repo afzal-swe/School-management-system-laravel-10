@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\SeoController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\BooksController;
 use App\Http\Controllers\Admin\NoticeController;
+use App\Http\Controllers\Admin\EventController;
 
 
 /*
@@ -105,6 +106,10 @@ Route::get('/notice', [NoticeController::class, 'view'])->name('notice.view')->m
 Route::get('/all/notice', [NoticeController::class, 'index'])->name('notice.index')->middleware(['auth', 'verified']);
 Route::get('/create/notice', [NoticeController::class, 'create'])->name('notice.create')->middleware(['auth', 'verified']);
 Route::post('/store/notice', [NoticeController::class, 'store'])->name('notice.store')->middleware(['auth', 'verified']);
+
+// Events Route Section //
+Route::get('/all/events', [EventController::class, 'index'])->name('event.index')->middleware(['auth', 'verified']);
+
 
 
 // SEO Route Section //
