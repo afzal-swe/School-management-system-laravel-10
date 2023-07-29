@@ -41,6 +41,6 @@ class ClassesController extends Controller
             'created_at' => Carbon::now(),
         ]);
         $notification = array('message' => 'Class Added Successfully', 'alert-type' => 'success');
-        return redirect()->route('class.index')->with($notification);
+        return redirect()->back()->with($notification);
     }
 }
