@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\TeacherController;
 use App\Http\Controllers\Admin\SeoController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\BooksController;
+use App\Http\Controllers\Admin\NoticeController;
 
 
 /*
@@ -98,6 +99,11 @@ Route::post('/teacher/store', [TeacherController::class, 'student_store'])->name
 // Teacher Profile Update //
 Route::get('/teacher/profile', [TeacherController::class, 'teacher_profile'])->name('advance_teacher.edit');
 Route::post('/teacher/profile/update/{id}', [TeacherController::class, 'teacher_profil'])->name('teacher_info.update');
+
+// Notice Route Section //
+Route::get('/notice', [NoticeController::class, 'view'])->name('notice.view')->middleware(['auth', 'verified']);
+Route::get('/all/notice', [NoticeController::class, 'index'])->name('notice.index')->middleware(['auth', 'verified']);
+
 
 // SEO Route Section //
 Route::get('/seo', [SeoController::class, 'seo'])->name('seo.setting')->middleware(['auth', 'verified']);
