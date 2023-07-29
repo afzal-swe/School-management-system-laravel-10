@@ -77,7 +77,7 @@
               <ul class="nav child_menu">
                 <li><a href="{{ route('student.info') }}">Student Information</a></li>
                 @if (Auth::user()->user_status==1)
-                <li><a href="form.html">Add Student</a></li>
+                <li><a href="{{ route('student.create') }}">Add Student</a></li>
                 <li><a href="{{ route('student.index') }}">Manage Students</a></li>
                 @endif
               </ul>

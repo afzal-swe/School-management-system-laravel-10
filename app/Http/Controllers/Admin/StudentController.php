@@ -18,6 +18,44 @@ class StudentController extends Controller
         return view('admin.student.index', compact('student'));
     }
 
+    public function create()
+    {
+        return view('admin.student.create');
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:' . User::class],
+            'password' => ['required', 'confirmed'],
+        ]);
+
+        $user = User::create([
+
+            'name' => $request->name,
+            'user_name' => $request->user_name,
+            'user_status' => $request->user_status,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+
+        // dd($user);
+
+        if ($user) {
+            Student::create([
+                'user_id' => $user->id,
+                'name' => $request->name,
+                's_id' => $request->s_id,
+                'phone' => $request->phone,
+                'email' => $request->email,
+                'pass' => Hash::make($request->password),
+            ]);
+        }
+        $notification = array('message' => 'Student Added Successfully', 'alert-type' => 'success');
+        return redirect()->back()->with($notification);
+    }
+
     public function view()
     {
         $student = Student::all();
