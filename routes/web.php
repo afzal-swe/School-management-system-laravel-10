@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Admin\TeacherController;
 use App\Http\Controllers\Admin\SeoController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\BooksController;
 
 
 /*
@@ -47,6 +48,10 @@ Route::middleware('auth')->group(function () {
 Route::get('/all/user', [UserController::class, 'index'])->name('user.index')->middleware(['auth', 'verified']);
 Route::get('/create/user', [UserController::class, 'create'])->name('user.create')->middleware(['auth', 'verified']);
 Route::post('/store/user', [UserController::class, 'store'])->name('user.store')->middleware(['auth', 'verified']);
+
+// All Books Route Section //
+Route::get('/all/books', [BooksController::class, 'index'])->name('book.index')->middleware(['auth', 'verified']);
+
 
 
 // Class Route Section //

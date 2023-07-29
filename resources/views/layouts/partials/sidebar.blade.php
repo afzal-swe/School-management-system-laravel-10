@@ -58,7 +58,7 @@
                 <li><a href="form.html">All Books</a></li>
                 @if (Auth::user()->user_status==1)
                 <li><a href="form.html">Add Books</a></li>
-                <li><a href="form.html">Manage Books</a></li>
+                <li><a href="{{ route('book.index') }}">Manage Books</a></li>
                 @endif
               </ul>
           </li>
