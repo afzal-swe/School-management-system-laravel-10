@@ -178,7 +178,7 @@
           @if (Auth::user()->user_status==1)
           <li><a><i class="fa fa-edit"></i> Event <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu">
-              <li><a href="#">create Event</a></li>
+              <li><a href="{{ route('event.create') }}">create Event</a></li>
               <li><a href="{{ route('event.index') }}">Manage Event</a></li>
             </ul>
           </li>

@@ -110,6 +110,8 @@ Route::post('/store/notice', [NoticeController::class, 'store'])->name('notice.s
 // Events Route Section //
 Route::get('/all/events', [EventController::class, 'index'])->name('event.index')->middleware(['auth', 'verified']);
 Route::get('/events', [EventController::class, 'view'])->name('event.view')->middleware(['auth', 'verified']);
+Route::get('/events/create', [EventController::class, 'create'])->name('event.create')->middleware(['auth', 'verified']);
+Route::post('/events/store', [EventController::class, 'store'])->name('event.store')->middleware(['auth', 'verified']);
 
 
 
