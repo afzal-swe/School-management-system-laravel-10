@@ -191,7 +191,7 @@
               <li><a href="form.html">Class Routine</a></li>
               <li><a href="form.html">Syllabus</a></li>
               <li><a href="{{ route('notice.view') }}">Notice</a></li>
-              <li><a href="form.html">Events</a></li>
+              <li><a href="{{ route('event.view') }}">Events</a></li>
               @if (Auth::user()->user_status==1)
               <li><a href="{{ route('seo.setting') }}">SEO</a></li>
               @endif
