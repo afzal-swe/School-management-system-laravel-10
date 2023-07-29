@@ -92,9 +92,9 @@
           <div class="tile-stats">
             <div class="icon"><i class="fa fa-book text-info" aria-hidden="true"></i></div>
             @php
-            $subjects = DB::table('subjects')->get();
+            $book = DB::table('books')->get();
             @endphp
-            <div class="count"><samp class="text-success">{{ count($subjects)}}</samp></div>
+            <div class="count"><samp class="text-success">{{ count($book)}}</samp></div>
             <h3 style="color: green;">Total Cource</h3>
             <p>Lorem ipsum psdea itgum rixt.</p>
           </div>

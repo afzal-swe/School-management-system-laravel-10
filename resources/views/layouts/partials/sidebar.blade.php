@@ -55,7 +55,7 @@
 
           <li><a><i class="fa fa-book"></i> Libraria <span class="fa fa-chevron-down"></span></a>
               <ul class="nav child_menu">
-                <li><a href="form.html">All Books</a></li>
+                <li><a href="{{ route('book.view') }}">All Books</a></li>
                 @if (Auth::user()->user_status==1)
                 <li><a href="form.html">Add Books</a></li>
                 <li><a href="{{ route('book.index') }}">Manage Books</a></li>
