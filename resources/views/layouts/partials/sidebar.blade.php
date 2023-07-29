@@ -37,7 +37,7 @@
           @if (Auth::user()->user_status==1)
           <li><a><i class="fa fa-user"></i> Users <span class="fa fa-chevron-down"></span></a>
               <ul class="nav child_menu">
-                <li><a href="form.html">Add user</a></li>
+                <li><a href="{{ route('user.create') }}">Add user</a></li>
                 <li><a href="{{ route('user.index') }}">Manage Admin</a></li>
               </ul>
           </li>

@@ -45,6 +45,8 @@ Route::middleware('auth')->group(function () {
 
 // All User Route Section //
 Route::get('/all/user', [UserController::class, 'index'])->name('user.index')->middleware(['auth', 'verified']);
+Route::get('/create/user', [UserController::class, 'create'])->name('user.create')->middleware(['auth', 'verified']);
+Route::post('/store/user', [UserController::class, 'store'])->name('user.store')->middleware(['auth', 'verified']);
 
 
 // Class Route Section //
