@@ -162,7 +162,7 @@
           @if (Auth::user()->user_status==1)
           <li><a><i class="fa fa-edit"></i> Notice <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu">
-              <li><a href="form.html">create notice</a></li>
+              <li><a href="{{ route('notice.create') }}">create notice</a></li>
               <li><a href="{{ route('notice.index') }}">Manage notice</a></li>
             </ul>
           </li>
@@ -171,7 +171,7 @@
           @if (Auth::user()->user_status==1)
           <li><a><i class="fa fa-edit"></i> Event <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu">
-              <li><a href="form.html">create Event</a></li>
+              <li><a href="#">create Event</a></li>
               <li><a href="form.html">Manage Event</a></li>
             </ul>
           </li>

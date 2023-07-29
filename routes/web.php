@@ -103,6 +103,8 @@ Route::post('/teacher/profile/update/{id}', [TeacherController::class, 'teacher_
 // Notice Route Section //
 Route::get('/notice', [NoticeController::class, 'view'])->name('notice.view')->middleware(['auth', 'verified']);
 Route::get('/all/notice', [NoticeController::class, 'index'])->name('notice.index')->middleware(['auth', 'verified']);
+Route::get('/create/notice', [NoticeController::class, 'create'])->name('notice.create')->middleware(['auth', 'verified']);
+Route::post('/store/notice', [NoticeController::class, 'store'])->name('notice.store')->middleware(['auth', 'verified']);
 
 
 // SEO Route Section //
