@@ -52,6 +52,8 @@ Route::post('/store/user', [UserController::class, 'store'])->name('user.store')
 // All Books Route Section //
 Route::get('/all/books', [BooksController::class, 'index'])->name('book.index')->middleware(['auth', 'verified']);
 Route::get('/books/view', [BooksController::class, 'view'])->name('book.view')->middleware(['auth', 'verified']);
+Route::get('/books/create', [BooksController::class, 'create'])->name('book.create')->middleware(['auth', 'verified']);
+Route::post('/books/store', [BooksController::class, 'store'])->name('book.store')->middleware(['auth', 'verified']);
 
 
 

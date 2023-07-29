@@ -57,7 +57,7 @@
               <ul class="nav child_menu">
                 <li><a href="{{ route('book.view') }}">All Books</a></li>
                 @if (Auth::user()->user_status==1)
-                <li><a href="form.html">Add Books</a></li>
+                <li><a href="{{ route('book.create') }}">Add Books</a></li>
                 <li><a href="{{ route('book.index') }}">Manage Books</a></li>
                 @endif
               </ul>
@@ -162,23 +162,17 @@
 
           <li><a><i class="fa fa-gear"></i> Setting <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu">
+              <li><a href="form.html">Events</a></li>
               <li><a href="form.html">Notice</a></li>
+              @if (Auth::user()->user_status==1)
               <li><a href="{{ route('seo.setting') }}">SEO</a></li>
-              <li><a href="form.html">Events</a></li>
-              <li><a href="form.html">Events</a></li>
-              <li><a href="form.html">Events</a></li>
-              <li><a href="form.html">Events</a></li>
+              @endif
             </ul>
           </li>
 
           @if (Auth::user()->user_status==1)
           <li><a><i class="fa fa-edit"></i> User Role <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu">
-              <li><a href="form.html">SEO</a></li>
-              <li><a href="form.html">Events</a></li>
-              <li><a href="form.html">Events</a></li>
-              <li><a href="form.html">Events</a></li>
-              <li><a href="form.html">Events</a></li>
               <li><a href="form.html">Events</a></li>
             </ul>
           </li>
