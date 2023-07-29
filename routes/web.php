@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\ProfileUpdateController;
 use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Admin\TeacherController;
 use App\Http\Controllers\Admin\SeoController;
+use App\Http\Controllers\Admin\UserController;
 
 
 /*
@@ -40,6 +41,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile/advance/info', [ProfileUpdateController::class, 'advance_info'])->name('advance_info.edit');
     Route::post('/profile/update/{id}', [ProfileUpdateController::class, 'advance_info_update'])->name('advance_info.update');
 });
+
+
+// All User Route Section //
+Route::get('/all/user', [UserController::class, 'index'])->name('user.index')->middleware(['auth', 'verified']);
 
 
 // Class Route Section //
