@@ -103,6 +103,7 @@ Route::post('/add/teacher/store', [TeacherController::class, 'store'])->name('te
 Route::get('/all/teacher', [TeacherController::class, 'view'])->name('teacher.info')->middleware(['auth', 'verified']);
 Route::get('/teacher/register', [TeacherController::class, 'register_create'])->name('teacher_register.create');
 Route::post('/teacher/store', [TeacherController::class, 'student_store'])->name('teacher.store');
+Route::get('/teacher/delete/{id}', [TeacherController::class, 'destroy'])->name('teacher.destroy');
 // Teacher Profile Update //
 Route::get('/teacher/profile', [TeacherController::class, 'teacher_profile'])->name('advance_teacher.edit');
 Route::post('/teacher/profile/update/{id}', [TeacherController::class, 'teacher_profil'])->name('teacher_info.update');

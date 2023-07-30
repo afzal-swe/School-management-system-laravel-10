@@ -143,4 +143,13 @@ class TeacherController extends Controller
         $notification = array('message' => 'Profile Update Successfully', 'alert-type' => 'success');
         return redirect()->back()->with($notification);
     }
+
+    public function destroy($id)
+    {
+
+        Teacher::findOrFail($id)->delete();
+
+        $notification = array('message' => 'Delete Successfully', 'alert-type' => 'success');
+        return redirect()->back()->with($notification);
+    }
 }
