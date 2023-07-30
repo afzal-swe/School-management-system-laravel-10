@@ -52,4 +52,13 @@ class BooksController extends Controller
         $notification = array('message' => 'Book Added Successfully', 'alert-type' => 'success');
         return redirect()->back()->with($notification);
     }
+
+    public function destroy($id)
+    {
+
+        Book::findOrFail($id)->delete();
+
+        $notification = array('message' => 'Book Delete Successfully', 'alert-type' => 'success');
+        return redirect()->back()->with($notification);
+    }
 }
