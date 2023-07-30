@@ -66,7 +66,7 @@
                                 <td>{{ $row->email}}</td>
                                 <td>
                                   <a href="#" class="btn btn-success sm" title="View Data"><i class="fa fa-eye"></i></a>
-                                  <a href="#" class="btn btn-info sm" title="Edit Data"><i class="fa fa-edit"></i></a>
+                                  <a href="{{ route('teacher.edit',$row->id) }}" class="btn btn-info sm" title="Edit Data"><i class="fa fa-edit"></i></a>
                                   <a href="{{ route('teacher.destroy',$row->id) }}" id="delete" class="btn btn-danger sm" title="Delete Data"><i class="fa fa-trash"></i></a>
                                     
                                 </td>

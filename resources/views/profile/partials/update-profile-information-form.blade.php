@@ -1,7 +1,7 @@
 <section>
     <header>
         
-        @if (Auth::user()->user_status==3)
+        @if (Auth::user()->user_status==3 || Auth::user()->user_status==1)
             <a href="{{ route('advance_info.edit') }}" class="btn btn-success btn-outline-light">Advance Profile</a><br><br>
         @elseif(Auth::user()->user_status==2)
             <a href="{{ route('advance_teacher.edit') }}" class="btn btn-success btn-outline-light">Advance Profile</a><br><br>

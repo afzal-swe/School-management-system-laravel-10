@@ -9,6 +9,7 @@ use App\Models\Department;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Carbon;
 
 class TeacherController extends Controller
 {
@@ -71,7 +72,7 @@ class TeacherController extends Controller
         return view('admin.teacher.register', compact('department'));
     }
 
-    public function student_store(Request $request)
+    public function teacher_store(Request $request)
     {
         $request->validate([
             'name' => 'required',
@@ -141,6 +142,41 @@ class TeacherController extends Controller
         }
 
         $notification = array('message' => 'Profile Update Successfully', 'alert-type' => 'success');
+        return redirect()->back()->with($notification);
+    }
+
+    public function edit($id)
+    {
+        $edit = Teacher::findOrFail($id);
+        return view('admin.teacher.edit', compact('edit'));
+    }
+
+    public function update(Request $request)
+    {
+        $update = $request->id;
+
+        $user = User::findOrFail($update)->update([
+            'name' => $request->name,
+            'user_name' => $request->user_name,
+            'email' => $request->email,
+        ]);
+
+        if ($user) {
+            Teacher::findOrFail($update)->update([
+                'name' => $request->name,
+                'phone' => $request->phone,
+                'email' => $request->email,
+                'barth' => $request->barth,
+                'father' => $request->father,
+                'mother' => $request->mother,
+                'address' => $request->address,
+                'post_code' => $request->post_code,
+                'zip_code' => $request->zip_code,
+                't_id' => $request->t_id,
+                'updated_at' => Carbon::now(),
+            ]);
+        }
+        $notification = array('message' => 'Teacher info Update Successfully', 'alert-type' => 'success');
         return redirect()->back()->with($notification);
     }
 

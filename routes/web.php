@@ -102,11 +102,13 @@ Route::get('/teacher/create', [TeacherController::class, 'create'])->name('teach
 Route::post('/add/teacher/store', [TeacherController::class, 'store'])->name('teacher_add.store')->middleware(['auth', 'verified']);
 Route::get('/all/teacher', [TeacherController::class, 'view'])->name('teacher.info')->middleware(['auth', 'verified']);
 Route::get('/teacher/register', [TeacherController::class, 'register_create'])->name('teacher_register.create');
-Route::post('/teacher/store', [TeacherController::class, 'student_store'])->name('teacher.store');
-Route::get('/teacher/delete/{id}', [TeacherController::class, 'destroy'])->name('teacher.destroy');
+Route::post('/teacher/store', [TeacherController::class, 'teacher_store'])->name('teacher.store')->middleware(['auth', 'verified']);
+Route::get('/teacher/delete/{id}', [TeacherController::class, 'destroy'])->name('teacher.destroy')->middleware(['auth', 'verified']);
+Route::get('/teacher/edit/{id}', [TeacherController::class, 'edit'])->name('teacher.edit')->middleware(['auth', 'verified']);
+Route::post('/teacher/update/{id}', [TeacherController::class, 'update'])->name('teacher.update')->middleware(['auth', 'verified']);
 // Teacher Profile Update //
-Route::get('/teacher/profile', [TeacherController::class, 'teacher_profile'])->name('advance_teacher.edit');
-Route::post('/teacher/profile/update/{id}', [TeacherController::class, 'teacher_profil'])->name('teacher_info.update');
+Route::get('/teacher/profile', [TeacherController::class, 'teacher_profile'])->name('advance_teacher.edit')->middleware(['auth', 'verified']);
+Route::post('/teacher/profile/update/{id}', [TeacherController::class, 'teacher_profil'])->name('teacher_info.update')->middleware(['auth', 'verified']);
 
 // Notice Route Section //
 Route::get('/notice', [NoticeController::class, 'view'])->name('notice.view')->middleware(['auth', 'verified']);
