@@ -157,7 +157,7 @@
           <li><a><i class="fa fa-edit"></i> Attendance <span class="fa fa-chevron-down"></span></a>
             
             <ul class="nav child_menu">
-              @if (Auth::user()->user_status==2)
+              @if (Auth::user()->user_status==2 || Auth::user()->user_status==1)
               <li><a href="form.html">Add Attendance</a></li>
               @endif
               @if (Auth::user()->user_status==1)
@@ -166,7 +166,7 @@
             </ul>
           </li>
 
-          @if (Auth::user()->user_status==1)
+          @if (Auth::user()->user_status==1 || Auth::user()->user_status==2)
           <li><a><i class="fa fa-edit"></i> Notice <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu">
               <li><a href="{{ route('notice.create') }}">create notice</a></li>

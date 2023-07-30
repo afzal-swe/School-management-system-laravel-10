@@ -39,4 +39,13 @@ class UserController extends Controller
         $notification = array('message' => 'New User Added Successfully', 'alert-type' => 'success');
         return redirect()->back()->with($notification);
     }
+
+    public function destroy($id)
+    {
+
+        User::findOrFail($id)->delete();
+
+        $notification = array('message' => 'Delete Successfully', 'alert-type' => 'success');
+        return redirect()->back()->with($notification);
+    }
 }
