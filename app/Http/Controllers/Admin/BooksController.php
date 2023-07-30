@@ -53,6 +53,30 @@ class BooksController extends Controller
         return redirect()->back()->with($notification);
     }
 
+    public function edit($id)
+    {
+        $classes = Classes::all();
+        $department = Department::all();
+        $edit = Book::findOrFail($id);
+        return view('admin.books.edit', compact('edit', 'classes', 'department'));
+    }
+
+    public function update(Request $request)
+    {
+        $update = $request->id;
+
+        Book::findOrFail($update)->update([
+            'class_id' => $request->class_id,
+            'department_id' => $request->department_id,
+            'title' => $request->title,
+            'writter' => $request->writter,
+            'slug' => Str::of($request->title)->slug('-'),
+            'updated_at' => Carbon::now(),
+        ]);
+        $notification = array('message' => 'Update Book Successfully', 'alert-type' => 'success');
+        return redirect()->route('book.index')->with($notification);
+    }
+
     public function destroy($id)
     {
 

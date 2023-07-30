@@ -60,6 +60,8 @@ Route::get('/books/view', [BooksController::class, 'view'])->name('book.view')->
 Route::get('/books/create', [BooksController::class, 'create'])->name('book.create')->middleware(['auth', 'verified']);
 Route::post('/books/store', [BooksController::class, 'store'])->name('book.store')->middleware(['auth', 'verified']);
 Route::get('/books/delete/{id}', [BooksController::class, 'destroy'])->name('book.destroy')->middleware(['auth', 'verified']);
+Route::get('/books/edit/{id}', [BooksController::class, 'edit'])->name('book.edit')->middleware(['auth', 'verified']);
+Route::post('/books/update/{id}', [BooksController::class, 'update'])->name('book.update')->middleware(['auth', 'verified']);
 
 
 
