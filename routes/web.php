@@ -91,10 +91,8 @@ Route::get('/student/create', [StudentController::class, 'create'])->name('stude
 Route::post('/store/student', [StudentController::class, 'store'])->name('student_add.store')->middleware(['auth', 'verified']);
 Route::get('/all/student', [StudentController::class, 'view'])->name('student.info')->middleware(['auth', 'verified']);
 Route::get('/student/register', [StudentController::class, 'register_create'])->name('student_register.create');
-Route::post('/student/store', [StudentController::class, 'student_store'])->name('student.store');
-
-
-
+Route::post('/student/store', [StudentController::class, 'student_store'])->name('student.store')->middleware(['auth', 'verified']);
+Route::get('/student/delete/{id}', [StudentController::class, 'destroy'])->name('student.destroy')->middleware(['auth', 'verified']);
 
 // Teacher Route Section //
 Route::get('/teacher', [TeacherController::class, 'index'])->name('teacher.index')->middleware(['auth', 'verified']);

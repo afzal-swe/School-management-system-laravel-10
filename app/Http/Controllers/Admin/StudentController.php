@@ -100,4 +100,13 @@ class StudentController extends Controller
         $notification = array('message' => 'Student Registration Successfully', 'alert-type' => 'success');
         return redirect()->route('login')->with($notification);
     }
+
+    public function destroy($id)
+    {
+
+        Student::findOrFail($id)->delete();
+
+        $notification = array('message' => 'Student Delete Successfully', 'alert-type' => 'success');
+        return redirect()->back()->with($notification);
+    }
 }
