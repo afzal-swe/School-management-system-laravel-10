@@ -51,6 +51,8 @@ Route::get('/all/user', [UserController::class, 'index'])->name('user.index')->m
 Route::get('/create/user', [UserController::class, 'create'])->name('user.create')->middleware(['auth', 'verified']);
 Route::post('/store/user', [UserController::class, 'store'])->name('user.store')->middleware(['auth', 'verified']);
 Route::get('/user/delete/{id}', [UserController::class, 'destroy'])->name('user.destroy')->middleware(['auth', 'verified']);
+Route::get('/user/edit/{id}', [UserController::class, 'edit'])->name('user.edit')->middleware(['auth', 'verified']);
+Route::post('/user/update/{id}', [UserController::class, 'update'])->name('user.update')->middleware(['auth', 'verified']);
 
 // All Books Route Section //
 Route::get('/all/books', [BooksController::class, 'index'])->name('book.index')->middleware(['auth', 'verified']);
