@@ -42,6 +42,29 @@ class UserTypeController extends Controller
         return redirect()->back()->with($notification);
     }
 
+    public function edit($id)
+    {
+        $department = Department::all();
+        $edit = UserType::findOrFail($id);
+
+        return view('admin.user_type.edit', compact('edit', 'department'));
+    }
+
+    public function update(Request $request)
+    {
+        $update = $request->id;
+
+        UserType::findOrFail($update)->update([
+            'user_department' => $request->user_department,
+            'user_type' => $request->user_type,
+
+            'user_slug' => Str::of($request->user_type)->slug('-'),
+            'updated_at' => Carbon::now(),
+        ]);
+        $notification = array('message' => 'User Type Update Successfully', 'alert-type' => 'success');
+        return redirect()->route('user_type.index')->with($notification);
+    }
+
     public function destroy($id)
     {
 

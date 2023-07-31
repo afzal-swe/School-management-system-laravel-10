@@ -86,6 +86,8 @@ Route::get('/user/type', [UserTypeController::class, 'index'])->name('user_type.
 Route::get('/user/type/add', [UserTypeController::class, 'create'])->name('user_type.create')->middleware(['auth', 'verified']);
 Route::post('/user/type/store', [UserTypeController::class, 'store'])->name('user_type.store')->middleware(['auth', 'verified']);
 Route::get('/user/type/delete/{id}', [UserTypeController::class, 'destroy'])->name('user_type.destroy')->middleware(['auth', 'verified']);
+Route::get('/user/type/edit/{id}', [UserTypeController::class, 'edit'])->name('user_type.edit')->middleware(['auth', 'verified']);
+Route::post('/user/type/update/{id}', [UserTypeController::class, 'update'])->name('user_type.update')->middleware(['auth', 'verified']);
 
 // Student Route Section //
 Route::get('/student', [StudentController::class, 'index'])->name('student.index')->middleware(['auth', 'verified']);
