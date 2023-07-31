@@ -80,6 +80,8 @@ Route::get('/department', [DepartmentController::class, 'index'])->name('departm
 Route::get('/department/create', [DepartmentController::class, 'create'])->name('department.create')->middleware(['auth', 'verified']);
 Route::post('/department/store', [DepartmentController::class, 'store'])->name('department.store')->middleware(['auth', 'verified']);
 Route::get('/department/delete/{id}', [DepartmentController::class, 'destroy'])->name('department.destroy')->middleware(['auth', 'verified']);
+Route::get('/department/edit/{id}', [DepartmentController::class, 'edit'])->name('department.edit')->middleware(['auth', 'verified']);
+Route::post('/department/update/{id}', [DepartmentController::class, 'update'])->name('department.update')->middleware(['auth', 'verified']);
 
 // User type Route Section //
 Route::get('/user/type', [UserTypeController::class, 'index'])->name('user_type.index')->middleware(['auth', 'verified']);

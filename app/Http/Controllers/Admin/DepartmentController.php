@@ -38,6 +38,25 @@ class DepartmentController extends Controller
         return redirect()->back()->with($notification);
     }
 
+    public function edit($id)
+    {
+        $edit = Department::findOrFail($id);
+        return view('admin.department.edit', compact('edit'));
+    }
+
+    public function update(Request $request)
+    {
+        $update = $request->id;
+
+        Department::findOrFail($update)->update([
+            'department' => $request->department,
+            'department_slug' => Str::of($request->department)->slug('-'),
+            'updated_at' => Carbon::now(),
+        ]);
+        $notification = array('message' => 'Department Name Update Successfully', 'alert-type' => 'success');
+        return redirect()->route('department.index')->with($notification);
+    }
+
     public function destroy($id)
     {
 
