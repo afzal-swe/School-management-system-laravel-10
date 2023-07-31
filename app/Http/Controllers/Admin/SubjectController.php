@@ -47,6 +47,29 @@ class SubjectController extends Controller
         return redirect()->back()->with($notification);
     }
 
+    public function edit($id)
+    {
+        $department = Department::all();
+        $classes = Classes::all();
+        $edit = Subject::findOrFail($id);
+        return view('admin.subject.edit', compact('department', 'edit', 'classes'));
+    }
+
+    public function update(Request $request)
+    {
+        $update = $request->id;
+
+        Subject::findOrFail($update)->update([
+            'class_id' => $request->class_id,
+            'department_id' => $request->department_id,
+            'subject' => $request->subject,
+            'slug' => Str::of($request->subject)->slug('-'),
+            'updated_at' => Carbon::now(),
+        ]);
+        $notification = array('message' => 'Subject Update Successfully', 'alert-type' => 'success');
+        return redirect()->route('subject.index')->with($notification);
+    }
+
     public function destroy($id)
     {
 

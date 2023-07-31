@@ -76,6 +76,8 @@ Route::get('/subject', [SubjectController::class, 'index'])->name('subject.index
 Route::get('/subject/create', [SubjectController::class, 'create'])->name('subject.create')->middleware(['auth', 'verified']);
 Route::post('/subject/store', [SubjectController::class, 'store'])->name('subject.store')->middleware(['auth', 'verified']);
 Route::get('/subject/delete/{id}', [SubjectController::class, 'destroy'])->name('subject.destroy')->middleware(['auth', 'verified']);
+Route::get('/subject/edit/{id}', [SubjectController::class, 'edit'])->name('subject.edit')->middleware(['auth', 'verified']);
+Route::post('/subject/update/{id}', [SubjectController::class, 'update'])->name('subject.update')->middleware(['auth', 'verified']);
 
 // Department Route Section //
 Route::get('/department', [DepartmentController::class, 'index'])->name('department.index')->middleware(['auth', 'verified']);
