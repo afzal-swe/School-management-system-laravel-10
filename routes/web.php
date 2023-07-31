@@ -68,6 +68,8 @@ Route::get('/class', [ClassesController::class, 'index'])->name('class.index')->
 Route::get('/class/create', [ClassesController::class, 'create'])->name('class.create')->middleware(['auth', 'verified']);
 Route::post('/class/store', [ClassesController::class, 'store'])->name('class.store')->middleware(['auth', 'verified']);
 Route::get('/class/delete/{id}', [ClassesController::class, 'destroy'])->name('class.destroy')->middleware(['auth', 'verified']);
+Route::get('/class/edit/{id}', [ClassesController::class, 'edit'])->name('class.edit')->middleware(['auth', 'verified']);
+Route::post('/class/update/{id}', [ClassesController::class, 'update'])->name('class.update')->middleware(['auth', 'verified']);
 
 // Subject Route Section //
 Route::get('/subject', [SubjectController::class, 'index'])->name('subject.index')->middleware(['auth', 'verified']);

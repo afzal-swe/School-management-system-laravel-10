@@ -44,6 +44,28 @@ class ClassesController extends Controller
         return redirect()->back()->with($notification);
     }
 
+    public function edit($id)
+    {
+        $department = Department::all();
+        $edit = Classes::findOrFail($id);
+
+        return view('admin.class.edit', compact('edit', 'department'));
+    }
+
+    public function update(Request $request)
+    {
+        $update = $request->id;
+
+        Classes::findOrFail($update)->update([
+            'department_id' => $request->department_id,
+            'class' => $request->class,
+            'slug' => Str::of($request->class)->slug('-'),
+            'updated_at' => Carbon::now(),
+        ]);
+        $notification = array('message' => 'Class Update Successfully', 'alert-type' => 'success');
+        return redirect()->route('class.index')->with($notification);
+    }
+
     public function destroy($id)
     {
 
