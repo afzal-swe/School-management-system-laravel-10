@@ -37,4 +37,13 @@ class DepartmentController extends Controller
         $notification = array('message' => 'Added A New Department Successfully', 'alert-type' => 'success');
         return redirect()->back()->with($notification);
     }
+
+    public function destroy($id)
+    {
+
+        Department::findOrFail($id)->delete();
+
+        $notification = array('message' => 'Delete Successfully', 'alert-type' => 'success');
+        return redirect()->back()->with($notification);
+    }
 }
