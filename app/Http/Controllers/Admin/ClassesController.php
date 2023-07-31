@@ -43,4 +43,12 @@ class ClassesController extends Controller
         $notification = array('message' => 'Class Added Successfully', 'alert-type' => 'success');
         return redirect()->back()->with($notification);
     }
+
+    public function destroy($id)
+    {
+
+        Classes::findOrFail($id)->delete();
+        $notification = array('message' => 'Class Delete Successfully', 'alert-type' => 'success');
+        return redirect()->back()->with($notification);
+    }
 }
