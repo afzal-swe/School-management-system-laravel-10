@@ -46,4 +46,12 @@ class SubjectController extends Controller
         $notification = array('message' => 'Subject Added Successfully', 'alert-type' => 'success');
         return redirect()->back()->with($notification);
     }
+
+    public function destroy($id)
+    {
+
+        Subject::findOrFail($id)->delete();
+        $notification = array('message' => 'Subject Delete Successfully', 'alert-type' => 'success');
+        return redirect()->back()->with($notification);
+    }
 }

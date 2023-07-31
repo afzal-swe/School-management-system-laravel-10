@@ -65,7 +65,7 @@
                             </div>
 
                             <div class="form-group">
-                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Class Name <span class="required text-danger">*</span></label>
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Department Name <span class="required text-danger">*</span></label>
 
                               <div class="col-md-6 col-sm-6 col-xs-12">
                                 <select name="department_id" id="" class="form-control col-md-7 col-xs-12 @error('department_id') is-invalid @enderror">
