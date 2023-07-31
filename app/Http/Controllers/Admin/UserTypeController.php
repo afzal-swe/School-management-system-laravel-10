@@ -41,4 +41,13 @@ class UserTypeController extends Controller
         $notification = array('message' => 'User Type Added Successfully', 'alert-type' => 'success');
         return redirect()->back()->with($notification);
     }
+
+    public function destroy($id)
+    {
+
+        UserType::findOrFail($id)->delete();
+
+        $notification = array('message' => 'User Delete Successfully', 'alert-type' => 'success');
+        return redirect()->back()->with($notification);
+    }
 }

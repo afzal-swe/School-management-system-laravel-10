@@ -63,8 +63,6 @@ Route::get('/books/delete/{id}', [BooksController::class, 'destroy'])->name('boo
 Route::get('/books/edit/{id}', [BooksController::class, 'edit'])->name('book.edit')->middleware(['auth', 'verified']);
 Route::post('/books/update/{id}', [BooksController::class, 'update'])->name('book.update')->middleware(['auth', 'verified']);
 
-
-
 // Class Route Section //
 Route::get('/class', [ClassesController::class, 'index'])->name('class.index')->middleware(['auth', 'verified']);
 Route::get('/class/create', [ClassesController::class, 'create'])->name('class.create')->middleware(['auth', 'verified']);
@@ -87,6 +85,7 @@ Route::post('/department/update/{id}', [DepartmentController::class, 'update'])-
 Route::get('/user/type', [UserTypeController::class, 'index'])->name('user_type.index')->middleware(['auth', 'verified']);
 Route::get('/user/type/add', [UserTypeController::class, 'create'])->name('user_type.create')->middleware(['auth', 'verified']);
 Route::post('/user/type/store', [UserTypeController::class, 'store'])->name('user_type.store')->middleware(['auth', 'verified']);
+Route::get('/user/type/delete/{id}', [UserTypeController::class, 'destroy'])->name('user_type.destroy')->middleware(['auth', 'verified']);
 
 // Student Route Section //
 Route::get('/student', [StudentController::class, 'index'])->name('student.index')->middleware(['auth', 'verified']);

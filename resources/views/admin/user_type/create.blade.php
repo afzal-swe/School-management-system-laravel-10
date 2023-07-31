@@ -69,12 +69,7 @@
                             <div class="form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">User Type <span class="required text-danger">*</span></label>
   
-                                {{-- <div class="col-md-6 col-sm-6 col-xs-12">
-                                  <select name="user_type" id="" class="form-control">
-                                    <option value="" disabled selected>Choose</option>
-                                    <option value="2">Teacher</option>
-                                    <option value="3">Student</option>
-                                </select> --}}
+                                <div class="col-md-6 col-sm-6 col-xs-12">
                                   <input type="text" id="user_type" class="form-control col-md-7 col-xs-12 @error('user_type') is-invalid @enderror" name="user_type" placeholder="User Type">
   
                                   @error('user_type')
