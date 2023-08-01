@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Event;
 use App\Models\Classes;
 use App\Models\Department;
+use Illuminate\Support\Carbon;
 
 class EventController extends Controller
 {
@@ -46,9 +47,35 @@ class EventController extends Controller
             'name' => $request->name,
             'details' => $request->details,
             'date' => $request->date,
+            'created_at' => Carbon::now(),
         ]);
         $notification = array('message' => 'Event Added Successfully', 'alert-type' => 'success');
         return redirect()->back()->with($notification);
+    }
+
+    public function edit($id)
+    {
+        $department = Department::all();
+        $classes = Classes::all();
+        $edit = Event::findOrFail($id);
+
+        return view('admin.event.edit', compact('department', 'classes', 'edit'));
+    }
+
+    public function update(Request $request)
+    {
+        $update = $request->id;
+
+        Event::findOrFail($update)->update([
+            'class_id' => $request->class_id,
+            'department_id' => $request->department_id,
+            'name' => $request->name,
+            'details' => $request->details,
+            'date' => $request->date,
+            'updated_at' => Carbon::now(),
+        ]);
+        $notification = array('message' => 'Event Update Successfully', 'alert-type' => 'success');
+        return redirect()->route('event.index')->with($notification);
     }
 
     public function destroy($id)

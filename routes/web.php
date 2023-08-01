@@ -135,6 +135,8 @@ Route::get('/events', [EventController::class, 'view'])->name('event.view')->mid
 Route::get('/events/create', [EventController::class, 'create'])->name('event.create')->middleware(['auth', 'verified']);
 Route::post('/events/store', [EventController::class, 'store'])->name('event.store')->middleware(['auth', 'verified']);
 Route::get('/events/destroy/{id}', [EventController::class, 'destroy'])->name('event.destroy')->middleware(['auth', 'verified']);
+Route::get('/events/edit/{id}', [EventController::class, 'edit'])->name('event.edit')->middleware(['auth', 'verified']);
+Route::post('/events/update/{id}', [EventController::class, 'update'])->name('event.update')->middleware(['auth', 'verified']);
 
 
 
