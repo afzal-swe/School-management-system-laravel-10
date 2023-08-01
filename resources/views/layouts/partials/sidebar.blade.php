@@ -69,21 +69,37 @@
 
           <li><a><i class="fa fa-edit"></i> Teachers <span class="fa fa-chevron-down"></span></a>
               <ul class="nav child_menu">
+
+                <li><a><i class="fa fa-edit"></i> Attendance <span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu">
+                    <li><a href="form.html">Add Attendance</a></li>
+                    <li><a href="form.html">Manage Attendance</a></li>
+                  </ul>
+                </li>
+
                 <li><a href="{{ route('teacher.info') }}">Teacher's Information</a></li>
-                @if (Auth::user()->user_status==1)
+                <li><a href="#">Attendance</a></li>
                 <li><a href="{{ route('teacher.create') }}">Add Teacher</a></li>
                 <li><a href="{{ route('teacher.index') }}">Manage Teachers</a></li>
-                @endif
+               
               </ul>
           </li>
 
           <li><a><i class="fa fa-graduation-cap"></i> Students <span class="fa fa-chevron-down"></span></a>
               <ul class="nav child_menu">
+
+                <li><a><i class="fa fa-edit"></i> Attendance <span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu">
+                    <li><a href="form.html">Add Attendance</a></li>
+                    <li><a href="form.html">Manage Attendance</a></li>
+                  </ul>
+                </li>
+
                 <li><a href="{{ route('student.info') }}">Student Information</a></li>
-                @if (Auth::user()->user_status==1)
+                <li><a href="#">Attendance</a></li>
                 <li><a href="{{ route('student.create') }}">Add Student</a></li>
                 <li><a href="{{ route('student.index') }}">Manage Students</a></li>
-                @endif
+               
               </ul>
           </li>
 
@@ -154,17 +170,7 @@
           </li>
 
           
-          <li><a><i class="fa fa-edit"></i> Attendance <span class="fa fa-chevron-down"></span></a>
-            
-            <ul class="nav child_menu">
-              @if (Auth::user()->user_status==2 || Auth::user()->user_status==1)
-              <li><a href="form.html">Add Attendance</a></li>
-              @endif
-              @if (Auth::user()->user_status==1)
-              <li><a href="form.html">Manage Attendance</a></li>
-              @endif
-            </ul>
-          </li>
+          
 
           @if (Auth::user()->user_status==1 || Auth::user()->user_status==2)
           <li><a><i class="fa fa-edit"></i> Notice <span class="fa fa-chevron-down"></span></a>
