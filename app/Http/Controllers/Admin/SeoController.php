@@ -11,7 +11,12 @@ class SeoController extends Controller
     public function seo()
     {
         $seo = Seo::find(1);
-        return view('admin.setting.seo', compact('seo'));
+
+        if ($seo == Null) {
+            return view('admin.error.error-403');
+        } else {
+            return view('admin.setting.seo', compact('seo'));
+        }
     }
 
     public function update(Request $request)
