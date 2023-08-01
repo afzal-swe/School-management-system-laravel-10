@@ -126,6 +126,8 @@ Route::get('/all/notice', [NoticeController::class, 'index'])->name('notice.inde
 Route::get('/create/notice', [NoticeController::class, 'create'])->name('notice.create')->middleware(['auth', 'verified']);
 Route::post('/store/notice', [NoticeController::class, 'store'])->name('notice.store')->middleware(['auth', 'verified']);
 Route::get('/store/delete/{id}', [NoticeController::class, 'destroy'])->name('notice.destroy')->middleware(['auth', 'verified']);
+Route::get('/store/edit/{id}', [NoticeController::class, 'edit'])->name('notice.edit')->middleware(['auth', 'verified']);
+Route::post('/store/update/{id}', [NoticeController::class, 'update'])->name('notice.update')->middleware(['auth', 'verified']);
 
 // Events Route Section //
 Route::get('/all/events', [EventController::class, 'index'])->name('event.index')->middleware(['auth', 'verified']);

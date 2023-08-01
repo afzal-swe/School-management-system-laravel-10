@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Notice;
 use App\Models\Classes;
 use App\Models\Department;
+use Illuminate\Support\Carbon;
 
 class NoticeController extends Controller
 {
@@ -47,8 +48,35 @@ class NoticeController extends Controller
             'name' => $request->name,
             'details' => $request->details,
             'date' => $request->date,
+            'created_at' => Carbon::now(),
         ]);
         $notification = array('message' => 'Notice Added Successfully', 'alert-type' => 'success');
+        return redirect()->back()->with($notification);
+    }
+
+    public function edit($id)
+    {
+        $edit = Notice::findOrFail($id);
+
+        $classes = Classes::all();
+        $department = Department::all();
+
+        return view('admin.notice.edit', compact('edit', 'classes', 'department'));
+    }
+
+    public function update(Request $request)
+    {
+        $update = $request->id;
+
+        Notice::findOrFail($update)->update([
+            'class_id' => $request->class_id,
+            'department_id' => $request->department_id,
+            'name' => $request->name,
+            'details' => $request->details,
+            'date' => $request->date,
+            'updated_at' => Carbon::now(),
+        ]);
+        $notification = array('message' => 'Notice Update Successfully', 'alert-type' => 'success');
         return redirect()->back()->with($notification);
     }
 
