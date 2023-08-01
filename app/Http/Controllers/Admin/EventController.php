@@ -50,4 +50,13 @@ class EventController extends Controller
         $notification = array('message' => 'Event Added Successfully', 'alert-type' => 'success');
         return redirect()->back()->with($notification);
     }
+
+    public function destroy($id)
+    {
+
+        Event::findOrFail($id)->delete();
+
+        $notification = array('message' => 'Event Delete Successfully', 'alert-type' => 'success');
+        return redirect()->back()->with($notification);
+    }
 }
