@@ -51,4 +51,13 @@ class NoticeController extends Controller
         $notification = array('message' => 'Notice Added Successfully', 'alert-type' => 'success');
         return redirect()->back()->with($notification);
     }
+
+    public function destroy($id)
+    {
+
+        Notice::findOrFail($id)->delete();
+
+        $notification = array('message' => 'Notice Delete Successfully', 'alert-type' => 'success');
+        return redirect()->back()->with($notification);
+    }
 }
